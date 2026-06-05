@@ -47,11 +47,50 @@
 
   .body{padding:18px 22px 22px;}
   .blurb{font-size:.97rem;color:#3a281a;margin-bottom:6px;}
+
+  /* ── Accordion activity list ── */
   ul.acts{list-style:none;margin:12px 0 0;}
-  ul.acts li{position:relative;padding:6px 0 6px 22px;font-size:.93rem;border-bottom:1px dashed var(--sand);}
-  ul.acts li:last-child{border-bottom:none;}
-  ul.acts li::before{content:"";position:absolute;left:3px;top:14px;width:7px;height:7px;background:var(--gold);border-radius:50%;}
-  ul.acts li .t{font-weight:700;color:var(--canyon);margin-right:7px;}
+  ul.acts>li{position:relative;border-bottom:1px dashed var(--sand);}
+  ul.acts>li:last-child{border-bottom:none;}
+  ul.acts>li::before{
+    content:"";position:absolute;left:3px;top:17px;
+    width:7px;height:7px;background:var(--gold);border-radius:50%;z-index:1;
+  }
+  ul.acts>li>details{width:100%;}
+  ul.acts>li>details>summary{
+    padding:7px 26px 7px 22px;
+    cursor:pointer;list-style:none;
+    font-size:.93rem;position:relative;display:block;
+    -webkit-user-select:none;user-select:none;
+  }
+  ul.acts>li>details>summary::-webkit-details-marker{display:none;}
+  ul.acts>li>details>summary::marker{display:none;}
+  ul.acts>li>details>summary::after{
+    content:"›";position:absolute;right:5px;top:50%;
+    transform:translateY(-50%);
+    font-size:1.2rem;color:var(--rust);opacity:.45;font-weight:300;
+    transition:transform .15s ease;
+  }
+  ul.acts>li>details[open]>summary::after{transform:translateY(-50%) rotate(90deg);}
+  ul.acts>li>details>summary .t{font-weight:700;color:var(--canyon);margin-right:7px;}
+
+  /* Expanded content */
+  .act-body{padding:2px 12px 14px 22px;border-top:1px solid var(--sand);}
+  .act-body>p{font-size:.87rem;color:#3a281a;line-height:1.57;margin:9px 0 6px;}
+  .act-body ul{list-style:none;margin:4px 0 8px;}
+  .act-body ul li{position:relative;padding:3px 0 3px 16px;font-size:.85rem;line-height:1.45;}
+  .act-body ul li::before{content:"→";position:absolute;left:0;top:3px;color:var(--rust);font-size:.72rem;}
+  .act-tips{background:var(--sand);border-radius:7px;padding:9px 12px;font-size:.82rem;color:#5a3a20;margin-top:8px;line-height:1.5;}
+  .act-tips b{color:var(--canyon);}
+
+  /* Image placeholder */
+  .img-ph{
+    height:130px;background:var(--sand-deep);border-radius:8px;
+    margin-top:10px;display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;font-size:.75rem;color:#9a7e58;
+    border:2px dashed #c4aa80;
+  }
+  .img-ph-icon{font-size:1.5rem;}
 
   .booking{margin-top:16px;background:var(--sand);border-radius:10px;padding:14px 16px;border-left:4px solid var(--rust);}
   .booking .bh{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-deep);margin-bottom:8px;}
@@ -115,6 +154,7 @@
     <div class="flag"><b>⚠ Fix this:</b> The voucher currently shows drop-off <b>Wed Jun 17, 10:00a</b> — but our hotels and flights run through <b>Thu Jun 18</b>. The car needs extending to Jun 18 or we'll be without a vehicle for Mesquite and the airport run. Call Thrifty (1-877-283-0898) to confirm.</div>
   </div>
 
+  <!-- ═══════════ DAY 1 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Welcome_to_fabulous_las_vegas_sign.jpg/1000px-Welcome_to_fabulous_las_vegas_sign.jpg" alt="Las Vegas">
@@ -123,11 +163,64 @@
     <div class="body">
       <p class="blurb">Land late morning, grab the rental, catch an afternoon magic show on the Strip, then drive north into the Eastern Sierra for the night in Big Pine.</p>
       <ul class="acts">
-        <li><span class="t">11:35a</span>Land at Las Vegas (LAS) — all four of us on WN974</li>
-        <li><span class="t">~12p</span>Pick up the Thrifty car (booked from 11:00a)</li>
-        <li><span class="t">2:00p</span>Nathan Burton Magic Show — inside FlyOver, 3771 Las Vegas Blvd S (to 3:10p)</li>
-        <li><span class="t">Aft.</span>Drive LAS → Big Pine via US-95 &amp; US-6 <i>(~5 hr 15 min, ~260 mi)</i></li>
-        <li><span class="t">Eve.</span>Check in at the Palisades Lodge, Big Pine</li>
+        <li>
+          <details>
+            <summary><span class="t">11:35a</span>Land at Las Vegas (LAS) — all four on WN974</summary>
+            <div class="act-body">
+              <p>Touchdown in Las Vegas. Baggage claim is on Level 0 (ground level). Follow signs for Ground Transportation to reach the Thrifty rental car shuttle.</p>
+              <div class="act-tips"><b>Tip:</b> Allow 45–60 min for bags + rental car pickup. The airport is large but well-signed. Look for blue "Rental Car" signs immediately past baggage claim.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">~12p</span>Pick up the Thrifty car</summary>
+            <div class="act-body">
+              <p>Take the rental car shuttle from Level 0 → Ground Transportation to the McCarran Rent-A-Car Center.</p>
+              <div class="act-tips"><b>⚠ Confirm on pickup:</b> the voucher shows drop-off Wed Jun 17 — verify at the counter that it's been extended to Thu Jun 18. Confirmation: <b>631118374</b>.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">2:00p</span>Nathan Burton Comedy Magic Show (to 3:10p)</summary>
+            <div class="act-body">
+              <p>Award-winning 70-minute Vegas magic and comedy show at FlyOver Las Vegas on the Strip. Large-scale illusions, fast humor, and audience participation make this one of Las Vegas's most kid-pleasing afternoon shows — bright, loud, and paced perfectly for young children.</p>
+              <ul>
+                <li>Large-scale stage illusions and dramatic disappearing acts</li>
+                <li>Audience participation moments — one of your kids may get called up</li>
+                <li>Comedy routines between magic segments keep the pace snappy</li>
+                <li>Arrive 15 min early for the best VIP seats</li>
+              </ul>
+              <div class="act-tips"><b>Logistics:</b> 3771 Las Vegas Blvd S (FlyOver Las Vegas). Theater is fully air-conditioned. Order # <b>FTHXXL</b> · Booking # <b>353315109</b> · Entry via QR / mobile wallet.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Nathan Burton Magic Show</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Aft.</span>Drive LAS → Big Pine via US-95 &amp; US-6 <i>(~5 hr 15 min, ~260 mi)</i></summary>
+            <div class="act-body">
+              <p>A sweeping high-desert drive north through Nevada before crossing into the Eastern Sierra. US-95 N cuts through the Mojave and up through Beatty and Amargosa Valley before connecting to US-6 W toward Bishop and Big Pine.</p>
+              <ul>
+                <li><b>Gas + snack stop: Beatty, NV</b> (~100 miles from LAS, ~1.5 hr) — good services, last busy stop for a while</li>
+                <li>US-6 W toward Bishop passes through stunning open basin-and-range landscape</li>
+                <li>Dramatic transition: Nevada high desert → Eastern Sierra peaks</li>
+                <li>Arrive Big Pine ~8:30–9pm — plan dinner in Bishop (15 min north, Mountain Rambler Brewery open till 10p)</li>
+              </ul>
+              <div class="act-tips"><b>Tip:</b> Fill the tank in Beatty. The stretch into Bishop has limited services. Bishop has a Vons and Grocery Outlet — worth a stop tonight or first thing tomorrow morning to stock the kitchen at the lodge.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Eve.</span>Check in — The Palisades Lodge, Big Pine</summary>
+            <div class="act-body">
+              <p>Your home for nights 1–2. Full kitchen in the room — stock it in Bishop for easy breakfasts. Quiet mountain-view setting in a small Eastern Sierra town.</p>
+              <div class="act-tips"><b>Logistics:</b> 110 N Main St, Big Pine, CA · Confirmation <b>5567.400.664</b> · PIN <b>3471</b> · +1 760 937 1340. Checkout revised to Sun Jun 14 — confirm lodge has this on file.</div>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="booking">
         <div class="bh">🎩 Show · 4 VIP seats</div>
@@ -156,18 +249,67 @@
         <ul>
           <li>Arriving late in Big Pine — grab dinner on the road or in Bishop (15 min north). <b>Mountain Rambler Brewery</b> (Bishop) is open till 10p for burgers/salads.</li>
         </ul>
-        <div class="bk"><b>Breakfast:</b> Palisades Lodge has no breakfast, but the room has a full kitchen — plan a grocery run in Bishop (Vons or Grocery Outlet) for in-room breakfasts.</div>
+        <div class="bk"><b>Breakfast:</b> Palisades Lodge has no breakfast, but the room has a full kitchen — plan a grocery run in Bishop (Vons, 1190 N Main St or Grocery Outlet, 1320 N Main St) for in-room breakfasts.</div>
       </div>
     </div>
   </div>
 
+  <!-- ═══════════ DAYS 2–3 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Eastern_Sierra_Nevada_from_US_395.jpg/1000px-Eastern_Sierra_Nevada_from_US_395.jpg" alt="Eastern Sierra">
       <div class="cap"><div class="dnum">Days 2–3</div><div class="ddate">Sat–Sun, June 13–14 · Family time near Bishop</div><span class="dtag fam">Family</span></div>
     </div>
     <div class="body">
-      <p class="blurb">Two open days in the Owens Valley with family — no fixed plans. The high Sierra is right there whenever you want it: Bishop Creek lakes, the Bristlecone Pines, or just an easy valley day.</p>
+      <p class="blurb">Two open days in the Owens Valley with family — no fixed schedule. The high Sierra is right there: alpine lakes, ancient bristlecone pines, or just a relaxed valley day.</p>
+      <ul class="acts">
+        <li>
+          <details>
+            <summary>Bishop Creek Canyon &amp; the Alpine Lakes</summary>
+            <div class="act-body">
+              <p>Just 20 miles west of Bishop, Highway 168 climbs into a spectacular canyon ending at three crystal-clear alpine lakes between 9,000 and 10,200 feet. The paved road means no serious hiking required — you can drive to the water's edge and picnic with the Sierra Nevada towering on all sides.</p>
+              <ul>
+                <li><b>South Lake</b> — highest and most dramatic; rocky shoreline, stunning Sierra views</li>
+                <li><b>Lake Sabrina</b> — accessible fishing pier, café with homemade pie and ice cream</li>
+                <li><b>North Lake</b> — quieter, beautiful aspen groves surrounding the shore</li>
+                <li>Allow 3–4 hours: scenic drive up + picnic + explore the shoreline</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> Bring layers — elevation is 15–20°F cooler than the valley. Kids may feel the altitude (9,000 ft) — slow down, drink extra water. Pack a picnic from Schat's Bakkery or Pupfish Cafe in Bishop. Road is paved but winding — take it easy.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Bishop Creek Canyon</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Ancient Bristlecone Pine Forest (optional day trip)</summary>
+            <div class="act-body">
+              <p>90 minutes from Big Pine in the White Mountains, this forest holds the world's oldest living trees — some over 4,800 years old, older than the Egyptian pyramids. The short Discovery Trail and visitor center make it accessible for young kids, and there's something genuinely mind-bending about standing next to a tree that was already ancient when Rome was founded.</p>
+              <ul>
+                <li><b>Discovery Trail</b> — short, easy loop perfect for kids; gnarled, twisted ancient trees unlike anything else</li>
+                <li>Schulman Grove Visitor Center — exhibits explaining the trees' astonishing age</li>
+                <li>Ranger talks at 11am &amp; 2pm in summer — great for curious kids</li>
+                <li>Sweeping views of the Owens Valley 5,000 feet below</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> 10,000 ft elevation — bring jackets (40–60°F up there), drink extra water, and take it slow. Allow 4–5 hours total including driving. <b>Skip the Methuselah Trail</b> (4.2 mi on exposed ridge — too long for young kids). Visitor center hours ~10am–4:30pm.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Ancient Bristlecone Pine Forest</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Stock the cooler before leaving Bishop</summary>
+            <div class="act-body">
+              <p>The stretch from Bishop to Cedar City crosses a long, sparse stretch of Nevada desert (Goldfield → Tonopah → Cathedral Gorge) with very limited food options. A well-loaded cooler is essential.</p>
+              <ul>
+                <li>Erick Schat's Bakkery — sheepherder bread + sandwiches make perfect road food</li>
+                <li>Pupfish Cafe — pack-out salads and fresh items for day-of eating</li>
+                <li>Vons (1190 N Main) or Grocery Outlet (1320 N Main) for drinks, snacks, fruit</li>
+              </ul>
+              <div class="act-tips"><b>Plan:</b> You'll eat from this cooler at Cathedral Gorge on Monday (no food at that park). Pack enough for 2 full days of snacks plus one picnic lunch.</div>
+            </div>
+          </details>
+        </li>
+      </ul>
       <div class="note">Both nights covered by the Palisades Lodge booking above (revised checkout Sun Jun 14).</div>
       <div class="food">
         <div class="fh">🍴 Eat — Bishop (the best food town of the trip)</div>
@@ -183,17 +325,46 @@
     </div>
   </div>
 
+  <!-- ═══════════ DAY 3 (evening) ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Goldfield%2CNV-hotel.JPG/1000px-Goldfield%2CNV-hotel.JPG" alt="Goldfield Nevada">
       <div class="cap"><div class="dnum">Day 3</div><div class="ddate">Sunday, June 14 · Bishop → Goldfield (evening drive)</div><span class="dtag">Travel</span></div>
     </div>
     <div class="body">
-      <p class="blurb">Spend the day with family, then leave Bishop in the evening and cross into Nevada's high desert — arriving late at a one-of-a-kind stay: an eclectic desert home in Goldfield, a half-living ghost mining town.</p>
+      <p class="blurb">Spend the day with family, then leave Bishop in the evening and cross into Nevada's high desert — arriving late in Goldfield, a half-living ghost mining town.</p>
       <ul class="acts">
-        <li><span class="t">Day</span>Family time near Bishop; pack up and check out of Palisades</li>
-        <li><span class="t">Eve.</span>Drive Bishop → Goldfield <i>(~2 hr 9 min)</i></li>
-        <li><span class="t">Late</span>Arrive Goldfield — self check-in with the door code, so a late arrival is no problem</li>
+        <li>
+          <details>
+            <summary><span class="t">Day</span>Family time near Bishop; pack up, check out of Palisades</summary>
+            <div class="act-body">
+              <p>Final morning in the Eastern Sierra. A last hike, a leisurely breakfast at Pupfish, or a bakery run at Schat's for road provisions. Check out of Palisades Lodge by the posted checkout time.</p>
+              <div class="act-tips"><b>Before you leave:</b> Stock the cooler at Vons or Grocery Outlet — nothing's open late in Goldfield and the Nevada desert stretch ahead has sparse options.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Eve.</span>Drive Bishop → Goldfield <i>(~2 hr 9 min)</i></summary>
+            <div class="act-body">
+              <p>Head south on US-395, then east on US-6 toward Tonopah, then south on US-95 to Goldfield. Beautiful high-desert drive — open skies, volcanic ridgelines, and the haunting emptiness of the Great Basin.</p>
+              <ul>
+                <li>Fill gas in Bishop before departing</li>
+                <li>Tonopah (~halfway) has gas if needed</li>
+                <li>Eat dinner in Bishop before leaving — nothing's open late in Goldfield</li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Late</span>Arrive Goldfield — self check-in</summary>
+            <div class="act-body">
+              <p>Self-check-in with the door code means late arrival is no problem at all. The Airbnb has a full kitchen. Your host is Michael.</p>
+              <div class="act-tips"><b>Finding it:</b> Don't use Apple Maps — GPS <b>37.703255, -117.231164</b>. Northbound Hwy 95, right on Crystal Ave entering town, 2 blocks, house on the right. Door code: <b>2 6 8 2</b> · WiFi: Radar Guest / summerplace</div>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="booking">
         <div class="bh">🛏 Lodging · Night 3</div>
@@ -205,32 +376,104 @@
           <div class="f"><span class="k">Wifi</span><span>Radar Guest / summerplace</span></div>
         </div>
       </div>
-      <div class="note"><b>Finding it:</b> Don't use Apple Maps — GPS <b>37.703255, -117.231164</b>. Northbound Hwy 95, right on Crystal Ave entering town, 2 blocks, house on the right.</div>
       <div class="food">
         <div class="fh">🍴 Eat — Goldfield (tiny)</div>
         <ul>
-          <li>You arrive late — eat dinner before town or bring your Bishop cooler provisions. Nothing's open late here.</li>
-          <li><b>Dinky Diner</b> — the one real gem (4.5★): fresh home-cooked breakfast in an 1800s building. Opens 8:15a — great quick breakfast before Monday's drive. Closed Sun.</li>
+          <li>You arrive late — eat dinner before leaving Bishop or bring your cooler provisions. Nothing's open late here.</li>
+          <li><b>Dinky Diner</b> — the one real gem (4.5★): fresh home-cooked breakfast in an 1800s building. Opens 8:15a — great quick breakfast before Monday's drive. <b>Closed Sun</b> — tomorrow (Monday) is fine ✓</li>
         </ul>
-        <div class="bk"><b>Breakfast:</b> The Goldfield Airbnb has a kitchen (and the door code lets you in late) — but with an early Monday start, Dinky Diner is the easy, fun option right in town.</div>
+        <div class="bk"><b>Breakfast:</b> The Goldfield Airbnb has a kitchen — but with an early Monday start, Dinky Diner is the easy, fun option right in town.</div>
       </div>
     </div>
   </div>
 
+  <!-- ═══════════ DAY 4 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Entrance_to_Tonopah_Historic_Mining_Park_%2853222973665%29.jpg/1000px-Entrance_to_Tonopah_Historic_Mining_Park_%2853222973665%29.jpg" alt="Tonopah Historic Mining Park">
       <div class="cap"><div class="dnum">Day 4</div><div class="ddate">Monday, June 15 · Goldfield → Tonopah → Cathedral Gorge → Cedar City</div><span class="dtag">Travel</span></div>
     </div>
     <div class="body">
-      <p class="blurb">A big day east with three fun stops: a graffiti car-art field in Goldfield, a climbable ghost-mine in Tonopah, then the otherworldly clay spires of Cathedral Gorge — ending at the mini animal farm outside Cedar City.</p>
+      <p class="blurb">A big day with three memorable stops: a graffiti car-art field, a climbable ghost-mine, and eerie slot-canyon caves — ending at the mini animal farm outside Cedar City.</p>
       <ul class="acts">
-        <li><span class="t">Morning</span>🧒 <b>International Car Forest</b> — right on Crystal Ave by your Airbnb; dozens of junked cars planted nose-down and covered in wild graffiti. Free, open 24h, great place to let the kids run. ~20–30 min</li>
-        <li><span class="t">~11a</span>Check out Goldfield; Tonopah is right on the way north <i>(Goldfield → Cathedral Gorge is ~3 hr 30 min driving total, Tonopah included)</i></li>
-        <li><span class="t">Late a.m.</span>Tonopah Historic Mining Park — self-guided tour, headframes &amp; tunnels (kids 7 &amp; under free; behind the Mizpah Hotel). Open 9–5</li>
-        <li><span class="t">Aft.</span>Continue east to Cathedral Gorge <i>(included in the ~3 hr 30 min above)</i></li>
-        <li><span class="t">Late aft.</span>Cathedral Gorge State Park (Panaca) — slot-canyon clay caves &amp; spires; easy walks the kids will love. $10/vehicle</li>
-        <li><span class="t">Eve.</span>Short drive on to the Mini Animal Farm, Cedar City <i>(~1 hr 28 min — the farm sits right on the Cathedral Gorge→Zion line)</i></li>
+        <li>
+          <details>
+            <summary><span class="t">Morning</span>🧒 International Car Forest of the Last Church</summary>
+            <div class="act-body">
+              <p>One of America's most gloriously weird roadside attractions: 40+ junked cars balanced nose-first in the Nevada desert, every surface painted in wild, constantly-changing graffiti art. It's free, bizarre, and right next to your Airbnb — the kids will find this genuinely hilarious.</p>
+              <ul>
+                <li>Cars stacked and angled in gravity-defying positions, some 20+ feet in the air</li>
+                <li>Every vehicle covered in colorful murals, skulls, characters, and abstract art</li>
+                <li>Open grounds to wander and get up close — no fence, no rules</li>
+                <li>Great photo ops: find the most creative car and do a family shot in front of it</li>
+                <li>Free, open 24/7 — 20–30 min is all you need</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> Right on Crystal Ave next to your Airbnb — you can almost walk there. Use the Airbnb bathroom first (no facilities on site). Go early before the desert heat builds. The art changes constantly so no two visits look the same.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>International Car Forest</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">~11a</span>Check out Goldfield; drive north to Tonopah</summary>
+            <div class="act-body">
+              <p>Tonopah is 27 miles north on US-95 (~30 min). Catch breakfast at Dinky Diner before checkout — it opens at 8:15am and it's genuinely great.</p>
+              <div class="act-tips"><b>Dinky Diner:</b> 4.5★, fresh home-cooked breakfast in an 1800s building, right in town. Opens 8:15a, closed Sundays — today is Monday ✓. Don't miss it.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Late a.m.</span>Tonopah Historic Mining Park</summary>
+            <div class="act-body">
+              <p>A sprawling 113-acre outdoor museum on the original silver claims that made Tonopah the "Queen of the Silver Camps." Self-guided tours let you wander freely past original mine headframes, century-old buildings, and towering mining equipment. Far more engaging than an indoor museum for young kids — it's a big open space to explore at their own pace.</p>
+              <ul>
+                <li>Original mine headframes and headhouses, many you can walk right up to</li>
+                <li>Authentic ore carts, machinery, and processing equipment scattered throughout</li>
+                <li>Multiple restored mine buildings and ruins to explore</li>
+                <li>Great elevated views over Tonopah from the hilltop park grounds</li>
+                <li>Self-guided: go at your own pace, leave when you're ready</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> <b>Kids 7 &amp; under FREE</b> · Adults $5 · Open 9am–5pm (behind the Mizpah Hotel). Allow 1.5–2 hours. Bring water and sunscreen — very exposed. Guided Polaris off-road tours also available: call 775-482-9274 ext 6 (8am–4pm) to reserve.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Tonopah Historic Mining Park</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Aft.</span>Continue east to Cathedral Gorge <i>(included in the ~3 hr 30 min total)</i></summary>
+            <div class="act-body">
+              <p>From Tonopah, head east on US-6 toward Ely, then south on US-93 to Panaca, NV. This stretch of Nevada highway is quiet and dramatic — wide-open basin-and-range landscape with almost no traffic.</p>
+              <div class="act-tips"><b>Tip:</b> This is a good time to eat from your Bishop cooler in the car. No food at Cathedral Gorge — the shaded ramadas at the park are your lunch spot.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Late aft.</span>Cathedral Gorge State Park</summary>
+            <div class="act-body">
+              <p>Ancient lakebed sediment eroded over millions of years into a surreal landscape of cathedral-like clay spires, slot canyon mazes, and cave-like formations. One of Nevada's most underrated parks — and the narrow crawl-through tunnels make it genuinely thrilling for young kids.</p>
+              <ul>
+                <li>Slot canyon maze — wander between towering pink and tan clay formations up to 30 feet tall</li>
+                <li><b>Crawl-through "rabbit hole" tunnels</b> — a highlight kids remember for years; narrow passages that pop you out into open spaces</li>
+                <li>Easy 1-mile loop trails through the canyon — totally manageable for young kids</li>
+                <li>Shaded picnic ramadas at the entrance (perfect for your cooler lunch)</li>
+                <li>Wildlife: lizards sunning on rocks, ravens, occasional raptors overhead</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> $10/vehicle. Flat, easy walking — very accessible for young kids. Allow 1–1.5 hours. Restrooms at the entrance. Late afternoon visit avoids peak heat. Keep kids away from unstable clay walls. Watch for loose soil in the slot sections.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Cathedral Gorge State Park</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Eve.</span>Drive to Mini Animal Farm, Cedar City <i>(~1 hr 28 min)</i></summary>
+            <div class="act-body">
+              <p>South on US-93, then west on I-15 toward St. George and Cedar City. The farm sits right on the Cathedral Gorge → Zion line — a perfectly placed overnight.</p>
+              <div class="act-tips"><b>Finding the farm:</b> Address won't resolve — use Google pin: <b>37.5559346, -113.1816901</b>. From St. George (NB I-15): Exit 42, right off exit, left on Old Hwy 91, 6 mi through Kanarraville to Bumblebee Spring Rd, left ½ mi, right through the gate. Only home on the north side — Unit #2. Host cell: 435-862-6342.</div>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="booking">
         <div class="bh">🛏 Lodging · Nights 4–5</div>
@@ -242,7 +485,6 @@
           <div class="f"><span class="k">Host cell</span><span>435-862-6342</span></div>
         </div>
       </div>
-      <div class="note"><b>Finding it:</b> Address won't resolve — use the pin. From St. George (NB I-15): Exit 42, right off exit, left on Old Hwy 91, 6 mi through Kanarraville to Bumblebee Spring Rd, left ½ mi, right through the gate. Only home on the north side — Unit #2.</div>
       <div class="food">
         <div class="fh">🍴 Eat — along the way</div>
         <ul>
@@ -255,19 +497,78 @@
     </div>
   </div>
 
+  <!-- ═══════════ DAY 5 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Zion_National_Park%2C_Springdale.jpg/1000px-Zion_National_Park%2C_Springdale.jpg" alt="Zion National Park">
       <div class="cap"><div class="dnum">Day 5</div><div class="ddate">Tuesday, June 16 · Zion National Park (day trip)</div><span class="dtag">Park Day</span></div>
     </div>
     <div class="body">
-      <p class="blurb">The crown jewel. An easy day trip from the farm into Zion — towering sandstone, the Virgin River, scenery that stops you mid-sentence. Beat the heat with an early start and water-based hikes, then back to the farm for the night.</p>
+      <p class="blurb">The crown jewel. A day trip from the farm into Zion — towering sandstone, the Virgin River, and the best hot-day family hike in any national park.</p>
       <ul class="acts">
-        <li><span class="t">Early</span>Drive Cedar City farm → Zion (Springdale) <i>(~50 min; verify exact on map)</i>; no checkout — you're at the farm again tonight</li>
-        <li><span class="t">Midday</span>Zion shuttle up-canyon — Riverside Walk into the Narrows (wading the river = perfect hot-day kid activity)</li>
-        <li><span class="t">Aft.</span>Emerald Pools or the easy Pa'rus Trail; canyon junction views</li>
-        <li><span class="t">Tip</span>Runs hot in June — lots of water, early start, midday in shade or the river</li>
-        <li><span class="t">Eve.</span>Drive back to the Mini Animal Farm <i>(~50 min)</i></li>
+        <li>
+          <details>
+            <summary><span class="t">Early</span>Drive Cedar City farm → Zion (Springdale) <i>(~50 min)</i></summary>
+            <div class="act-body">
+              <p>Take I-15 S to UT-17 S, then UT-9 W through the dramatic Zion–Mt. Carmel Tunnel into the canyon. No checkout today — you're back at the farm tonight.</p>
+              <div class="act-tips"><b>Tip:</b> Leave by 7–7:30am. Park entry is <b>$35/vehicle</b> (7-day pass). Head to the Visitor Center first to get a map and check the shuttle schedule. Crowds build rapidly after 9am — the earlier the better.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Midday</span>Zion shuttle + Riverside Walk into the Narrows</summary>
+            <div class="act-body">
+              <p>Zion's most iconic family walk: a paved 2.2-mile path following the Virgin River deep into the canyon, where the walls rise 1,000 feet straight overhead. At the trail's end, kids can wade in the cool, crystal-clear river — one of the best hot-day activities in any national park, and genuinely magical.</p>
+              <ul>
+                <li>Board the free shuttle at the Visitor Center → ride to <b>Stop 9 (Temple of Sinawava)</b></li>
+                <li>Walk the flat, paved Riverside Walk (2.2 mi round trip) along the river</li>
+                <li>Reach the Narrows entry and wade in the cool Virgin River (~55°F — refreshingly cold in June heat)</li>
+                <li>You can turn back at any point — no need to commit to the full wading hike</li>
+                <li>Canyon walls provide shade through most of the walk</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> This stop gets packed by 10am — go first thing. Bring water shoes or old sneakers for the river wading. The paved walk is stroller-accessible. The full Narrows wading hike beyond the paved section involves icy water up to your waist and slippery rocks — the paved section gives you the views without the challenge. That's the right call with young kids.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Riverside Walk / Zion Narrows</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Aft.</span>Emerald Pools or the Pa'rus Trail</summary>
+            <div class="act-body">
+              <p>Two great afternoon options depending on how much energy is left. Lower Emerald Pool delivers a waterfall payoff in just 0.6 miles. Pa'rus Trail is flat, paved, and river-level — perfect if the kids are tired but you want to stay in the park a bit longer.</p>
+              <ul>
+                <li><b>Lower Emerald Pool</b> (0.6 mi RT, Shuttle Stop 5 / Zion Lodge): a quick, shaded walk to a waterfall dripping into a shimmering pool — satisfying and short</li>
+                <li><b>Pa'rus Trail</b> (up to 3.5 mi RT from Visitor Center): completely flat, paved, stroller-accessible river walk; multiple spots to dip feet in the Virgin River; dogs and bikes welcome</li>
+              </ul>
+              <div class="act-tips"><b>Tips:</b> Do Emerald Pool first while energy is up (shuttle to Stop 5). Save Pa'rus Trail for winding down in the late afternoon — it starts at the Visitor Center so you can just walk back when done. Both have much shorter shuttle lines than the Narrows stop. Carry plenty of water.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Emerald Pools / Pa'rus Trail</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Tip</span>June heat strategy at Zion</summary>
+            <div class="act-body">
+              <p>June in Zion Canyon hits 95–100°F in open areas. The good news: most of the best family activities are shaded by canyon walls or along the cool river.</p>
+              <ul>
+                <li>Start before 8am — canyon temps are 10–15°F cooler in the morning</li>
+                <li>The Narrows is your best friend: canyon walls provide shade, river keeps you cool</li>
+                <li>Midday break (11am–2pm): rest in Springdale, lunch at Oscar's Cafe or FeelLove Coffee</li>
+                <li>Return for Emerald Pools in late afternoon when crowds thin</li>
+                <li>Bring 1.5+ liters of water per person — refill at Zion Lodge on the shuttle loop</li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Eve.</span>Drive back to Mini Animal Farm <i>(~50 min)</i></summary>
+            <div class="act-body">
+              <p>Reverse your morning route back to the farm. The kids get the animals again — miniature Highland cows, goats, and alpacas — before bed. You skip packing up for another day.</p>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="note">🛏 Second night at the <b>Mini Animal Farm</b> (covered by the Nights 4–5 booking above). The kids get the animals morning and evening, and you skip packing up.</div>
       <div class="food">
@@ -281,18 +582,58 @@
     </div>
   </div>
 
+  <!-- ═══════════ DAY 6 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Aztec_Sandstone_-_Valley_of_Fire1.jpg/1000px-Aztec_Sandstone_-_Valley_of_Fire1.jpg" alt="Valley of Fire State Park">
       <div class="cap"><div class="dnum">Day 6</div><div class="ddate">Wednesday, June 17 · Cedar City → Valley of Fire → Mesquite</div><span class="dtag">Travel</span></div>
     </div>
     <div class="body">
-      <p class="blurb">Check out of the farm and drop south into the Valley of Fire — swirling crimson sandstone, petroglyphs, dinosaur-age dunes turned to stone. End the day in Mesquite.</p>
+      <p class="blurb">Check out of the farm and drop south into the Valley of Fire — swirling crimson sandstone, ancient petroglyphs, dinosaur-age dunes turned to stone. End the day in Mesquite.</p>
       <ul class="acts">
-        <li><span class="t">10:00a</span>Check out of the Mini Animal Farm</li>
-        <li><span class="t">Morn.</span>Drive toward Valley of Fire <i>(Zion → Valley of Fire is ~1 hr 55 min; from the farm it's a bit longer — verify on map)</i></li>
-        <li><span class="t">Midday</span>Valley of Fire — scenic road, Atlatl Rock petroglyphs, Elephant Rock, Fire Wave overlook</li>
-        <li><span class="t">Aft.</span>Continue to Mesquite <i>(~1 hr 20 min, ~52 mi)</i>; cool off</li>
+        <li>
+          <details>
+            <summary><span class="t">10:00a</span>Check out of Mini Animal Farm</summary>
+            <div class="act-body">
+              <p>Final animal feeding before checkout. The kids will want more time with the miniature Highland cows — pack the night before to make a smooth 10am departure.</p>
+              <div class="act-tips"><b>Tip:</b> Stock up on snacks and water in Cedar City or St. George before Valley of Fire. There's no food inside the park and June temps regularly exceed 110°F — you'll want 2–3 liters of water per person minimum.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Morn.</span>Drive toward Valley of Fire <i>(from farm ~2.5 hr)</i></summary>
+            <div class="act-body">
+              <p>Head south on I-15 through St. George and Las Vegas toward the Valley of Fire exit northeast of Las Vegas. The park entrance is about 35 miles from the Strip.</p>
+              <div class="act-tips"><b>Grocery stop:</b> St. George (Smith's, Walmart) has good options. Load up on water, snacks, and sunscreen before the park — nothing is available inside.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Midday</span>Valley of Fire State Park</summary>
+            <div class="act-body">
+              <p>Nevada's oldest state park, where ancient Jurassic sand dunes turned to vivid crimson sandstone over 150 million years, then eroded into otherworldly formations. June heat is extreme (110°F+) so you'll stick to the shortest stops — but even a rapid drive-through with two stops delivers some of the most striking red rock scenery anywhere in the Southwest.</p>
+              <ul>
+                <li><b>Atlatl Rock</b> — climb a short staircase to a panel of 2,000-year-old Ancestral Puebloan petroglyphs carved directly into the sandstone. One of the most accessible rock art sites in Nevada. Shaded rest area and restrooms at the parking lot.</li>
+                <li><b>Elephant Rock</b> — a 0.3-mile loop to a sandstone formation that genuinely looks like an elephant. Quick, flat, and the kids love spotting the shape. Great photo stop.</li>
+                <li><b>Rainbow Vista pullout</b> — no walking required; just pull over for panoramic views of banded red, orange, white, and purple rock formations stretching to the horizon.</li>
+                <li><b>The Beehives</b> (near east entrance) — dome-shaped formations visible from the road; stop for 5 min to look.</li>
+              </ul>
+              <div class="act-tips"><b>⚠ Heat warning:</b> June highs regularly exceed 110°F. All trails over 1 mile are <b>closed May–September</b>. Visit Atlatl Rock and Elephant Rock before 9:30am or after 4:30pm. Bring 2–3 liters of water per person. Reapply sunscreen every 30 min. Visitor Center (9am–4:30pm) has shade, water, and AC. Fire Wave and White Domes loop are closed in summer — skip them.</div>
+              <div class="img-ph"><div class="img-ph-icon">📷</div>Valley of Fire State Park</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">Aft.</span>Drive Valley of Fire → Mesquite <i>(~1 hr 20 min, ~52 mi)</i></summary>
+            <div class="act-body">
+              <p>Exit the park west and pick up I-15 N toward Mesquite. The Highland Estates Condotel has a pool — perfect for cooling off after the desert heat.</p>
+              <div class="act-tips"><b>Dinner tonight:</b> Gregory's Mesquite Grill (4.6★) — excellent salmon, great-value early dinner menu. Closed Mon/Tue — open Wed ✓. Skip the smoky casino restaurants with the kids.</div>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="booking">
         <div class="bh">🛏 Lodging · Night 6</div>
@@ -317,6 +658,7 @@
     </div>
   </div>
 
+  <!-- ═══════════ DAY 7 ═══════════ -->
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Las_Vegas_strip.jpg/1000px-Las_Vegas_strip.jpg" alt="Las Vegas Strip">
@@ -325,10 +667,41 @@
     <div class="body">
       <p class="blurb">Easy final morning. Drive from Mesquite to Las Vegas, drop the car, and fly home — into Baltimore by evening.</p>
       <ul class="acts">
-        <li><span class="t">Morn.</span>Check out of Highland Estates (by 11a); drive Mesquite → LAS <i>(~1 hr 25 min via I-15)</i></li>
-        <li><span class="t">~9:30a</span>Return the Thrifty car (target ~2 hrs before the flight)</li>
-        <li><span class="t">12:10p</span>Depart Las Vegas — WN235</li>
-        <li><span class="t">7:50p</span>Arrive Baltimore (BWI)</li>
+        <li>
+          <details>
+            <summary><span class="t">Morn.</span>Check out, drive Mesquite → LAS <i>(~1 hr 25 min via I-15)</i></summary>
+            <div class="act-body">
+              <p>Pack the night before for a smooth checkout. I-15 W is a straight shot to Las Vegas — target leaving Mesquite by 8:30am.</p>
+              <div class="act-tips"><b>Timeline:</b> Leave Mesquite 8:30a → arrive LAS ~9:45–10a → return car (~15 min) → shuttle to terminal → check bags → security → gate. A 12:10p departure is very comfortable with this timing.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">~9:30a</span>Return the Thrifty car</summary>
+            <div class="act-body">
+              <p>Return at the Thrifty counter at the McCarran Rent-A-Car Center. The shuttle back to Terminal 1 (Southwest Airlines) runs every few minutes.</p>
+              <div class="act-tips"><b>Tip:</b> Take a quick photo of the car on return — documents the condition at drop-off. Keep your Thrifty receipt. Confirmation: <b>631118374</b>.</div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">12:10p</span>Depart Las Vegas — WN235 → BWI</summary>
+            <div class="act-body">
+              <p>Southwest Flight WN235, Las Vegas (LAS) → Baltimore (BWI). Arriving home at 7:50pm Eastern.</p>
+              <div class="act-tips">Confirmations: Greg + Ori <b>ARQ38O</b> · Shai <b>AWZNU8</b></div>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><span class="t">7:50p</span>Arrive Baltimore (BWI)</summary>
+            <div class="act-body">
+              <p>Home! 7 days, 6 nights, one big desert and canyon loop in the books.</p>
+            </div>
+          </details>
+        </li>
       </ul>
       <div class="note"><b>Tight-ish morning:</b> A 12:10p flight means leaving Mesquite by ~8:30a to return the car and clear security comfortably. Easy if you pack the night before.</div>
     </div>

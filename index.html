@@ -41,9 +41,6 @@
     background:linear-gradient(transparent,rgba(20,10,4,.78));color:#fff;}
   .photo .dnum{font-family:'Fraunces';font-weight:900;font-size:1.5rem;line-height:1;}
   .photo .ddate{font-weight:600;font-size:.92rem;opacity:.95;}
-  .photo .dtag{display:inline-block;margin-top:5px;font-size:.66rem;font-weight:600;
-    letter-spacing:.12em;text-transform:uppercase;background:var(--rust);color:#fff;padding:3px 9px;border-radius:14px;}
-  .photo .dtag.fam{background:var(--sage);} .photo .dtag.gap{background:var(--rust-deep);}
 
   .body{padding:18px 22px 22px;}
   .blurb{font-size:.97rem;color:#3a281a;margin-bottom:6px;}
@@ -92,6 +89,8 @@
   }
   .img-ph-icon{font-size:1.5rem;}
   .act-img{width:100%;height:180px;object-fit:cover;object-position:center;border-radius:8px;margin:0 0 10px;display:block;}
+  .booking .act-img{float:right;width:160px;height:auto;object-fit:fill;margin:0 0 10px 14px;}
+  .booking{overflow:hidden;}
 
   .booking{margin-top:16px;background:var(--sand);border-radius:10px;padding:14px 16px;border-left:4px solid var(--rust);}
   .booking .bh{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-deep);margin-bottom:8px;}
@@ -151,7 +150,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://nolimitsadventure.com/wp-content/uploads/2025/04/Welcome-to-Fabulous-Las-Vegas-Sign.webp" alt="Las Vegas">
-      <div class="cap"><div class="dnum">Day 1</div><div class="ddate">Friday, June 12 · BWI → Las Vegas, magic show, drive to Big Pine</div><span class="dtag">Travel</span></div>
+      <div class="cap"><div class="dnum">Day 1</div><div class="ddate">Friday, June 12 · BWI → Las Vegas, magic show, drive to Big Pine</div></div>
     </div>
     <div class="body">
       <p class="blurb">Early departure from Harrisburg: drive to BWI, park, and catch a morning flight west. Land in Las Vegas at 11:35 AM, pick up the rental truck, hit an afternoon magic show on the Strip, then drive north into the Eastern Sierra to Big Pine.</p>
@@ -297,7 +296,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLr828J-9t4eAsSb85y8v-XcPrNHEOGNCcqvQKZsuAiozdXSGL1QtTeQOV5vtPKhBUCXXM1FeKMROr7dsd1G5r7q70ylKIBMO1uZqVRQw3QjtaHuK5P81168tMc5YFgttWf0FGukS4qbmOup9KS2NerKuQ4xknmzD4iMVQjuOaimelgw_O2BHKvRp8wU_Y/s6795/20250621_BishopLake_0002.jpg" alt="Eastern Sierra">
-      <div class="cap"><div class="dnum">Days 2–3</div><div class="ddate">Sat–Sun, June 13–14 · Family time near Bishop</div><span class="dtag fam">Family</span></div>
+      <div class="cap"><div class="dnum">Days 2–3</div><div class="ddate">Sat–Sun, June 13–14 · Family time near Bishop</div></div>
     </div>
     <div class="body">
       <p class="blurb">Two open days in the Owens Valley with family — no fixed schedule. The high Sierra is right there: alpine lakes, ancient bristlecone pines, or just a relaxed valley day.</p>
@@ -352,7 +351,19 @@
           </details>
         </li>
       </ul>
-      <div class="note">Both nights covered by the Palisades Lodge booking above (revised checkout Sun Jun 14).</div>
+      <div class="booking">
+        <div class="bh"> Lodging · Nights 1–2</div>
+        <img class="act-img" src="https://images.squarespace-cdn.com/content/v1/6878a44d55fadc1cf40ad72d/45e6b0a6-d412-4a12-8aaf-62d8c4a24dd8/DroneImage-HighRes_0825.jpg" alt="The Palisades Lodge, Big Pine CA">
+        <div class="bname">The Palisades Lodge of Big Pine</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">435</span></div>
+          <div class="f"><span class="k">Check-in</span><span>Fri Jun 12, from 4:00 PM (virtual — door code sent morning of)</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Sun Jun 14, by 11:00 AM</span></div>
+          <div class="f"><span class="k">Address</span><span>110 N Main St, Big Pine, CA</span></div>
+          <div class="f"><span class="k">Phone</span><span>(760) 582-3267</span></div>
+          <div class="f"><span class="k">Email</span><span>palisadesbigpine@gmail.com</span></div>
+        </div>
+      </div>
       <div class="food">
         <div class="fh"> Eat — Bishop (the best food town of the trip)</div>
         <ul>
@@ -371,7 +382,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://californiafallcolor.com/wp-content/uploads/2020/10/Elliot-McGucken-121009262_1252850035100670_1764385658406603770_o-1030x686.jpg" alt="Goldfield Nevada">
-      <div class="cap"><div class="dnum">Day 3</div><div class="ddate">Sunday, June 14 · Bishop → Goldfield (evening drive)</div><span class="dtag">Travel</span></div>
+      <div class="cap"><div class="dnum">Day 3</div><div class="ddate">Sunday, June 14 · Bishop → Goldfield (evening drive)</div></div>
     </div>
     <div class="body">
       <p class="blurb">Spend the day with family, then leave Bishop in the evening and cross into Nevada's high desert — arriving late in Goldfield, a half-living ghost mining town.</p>
@@ -436,7 +447,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Eroded_columns_in_Cathedral_Gorge_State_Park_%283193580920%29.jpg" alt="Tonopah Historic Mining Park">
-      <div class="cap"><div class="dnum">Day 4</div><div class="ddate">Monday, June 15 · Goldfield → Tonopah → Cathedral Gorge → Cedar City</div><span class="dtag">Travel</span></div>
+      <div class="cap"><div class="dnum">Day 4</div><div class="ddate">Monday, June 15 · Goldfield → Tonopah → Cathedral Gorge → Cedar City</div></div>
     </div>
     <div class="body">
       <p class="blurb">A big day with three memorable stops: a graffiti car-art field, a climbable ghost-mine, and eerie slot-canyon caves — ending at the mini animal farm outside Cedar City.</p>
@@ -554,7 +565,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://ctfassets.ksldigital.com/0wjmk6wgfops/7cixieq1D4gr5o8sJW3XFh/55194d44c3f0bcbf9aeba6a00ddb9cc2/_a186486f-04bf-437d-b716-90bb2b6ae10a.4e5e2e4162.jpg?q=70" alt="Zion National Park">
-      <div class="cap"><div class="dnum">Day 5</div><div class="ddate">Tuesday, June 16 · Zion National Park (day trip)</div><span class="dtag">Park Day</span></div>
+      <div class="cap"><div class="dnum">Day 5</div><div class="ddate">Tuesday, June 16 · Zion National Park (day trip)</div></div>
     </div>
     <div class="body">
       <p class="blurb">The crown jewel. A day trip from the farm into Zion — towering sandstone, the Virgin River, and the best hot-day family hike in any national park.</p>
@@ -627,7 +638,17 @@
           </details>
         </li>
       </ul>
-      <div class="note"> Second night at the <b>Mini Animal Farm</b> (covered by the Nights 4–5 booking above). The kids get the animals morning and evening, and you skip packing up.</div>
+      <div class="booking">
+        <div class="bh"> Lodging · Nights 4–5</div>
+        <img class="act-img" src="https://a0.muscache.com/im/pictures/3e298f84-f658-4423-8edf-fad0254cacf9.jpg" alt="Mini Animal Farm, Cedar City">
+        <div class="bname">Farm House #2, Mini Animal Farm — Cedar City (Airbnb, host Brandon)</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">HM4EJ5NAR5</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Wed Jun 17, 10:00 AM</span></div>
+          <div class="f"><span class="k">Google pin</span><span class="conf">37.5559346, -113.1816901</span></div>
+          <div class="f"><span class="k">Host cell</span><span>435-862-6342</span></div>
+        </div>
+      </div>
       <div class="food">
         <div class="fh"> Eat — Springdale / Zion</div>
         <ul>
@@ -643,7 +664,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_limit,h_1200,q_75,w_1200/https://lasvegas.simpleviewcrm.com/images/listings/original_PM_ValleyFire_2015-0466-7454_16-90-3e0cdc2c9797e5f.jpg" alt="Valley of Fire State Park">
-      <div class="cap"><div class="dnum">Day 6</div><div class="ddate">Wednesday, June 17 · Cedar City → Valley of Fire → Las Vegas</div><span class="dtag">Travel</span></div>
+      <div class="cap"><div class="dnum">Day 6</div><div class="ddate">Wednesday, June 17 · Cedar City → Valley of Fire → Las Vegas</div></div>
     </div>
     <div class="body">
       <p class="blurb">Check out of the farm and drop south into the Valley of Fire — swirling crimson sandstone, ancient petroglyphs, dinosaur-age dunes turned to stone. End the day at the Four Seasons on the Las Vegas Strip.</p>
@@ -727,7 +748,7 @@
   <div class="day">
     <div class="photo">
       <img src="https://worldmark.wyndhamdestinations.com/content/dam/wyndham/wyndham-vacation-clubs/city-guide/las-vegas-city-guide/Las-Vegas-Destination-1990x810.jpg" alt="Las Vegas Strip">
-      <div class="cap"><div class="dnum">Day 7</div><div class="ddate">Thursday, June 18 · Las Vegas → home</div><span class="dtag">Travel</span></div>
+      <div class="cap"><div class="dnum">Day 7</div><div class="ddate">Thursday, June 18 · Las Vegas → home</div></div>
     </div>
     <div class="body">
       <p class="blurb">Easy final morning on the Strip. A short drive to Harry Reid International, drop the car, and fly home — into Baltimore by evening.</p>

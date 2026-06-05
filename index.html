@@ -113,6 +113,25 @@
 
   footer{text-align:center;margin-top:36px;padding-top:24px;border-top:2px solid var(--sand-deep);font-size:.82rem;color:#8a7355;}
   footer .big{font-family:'Fraunces';font-weight:600;font-size:1.05rem;color:var(--canyon);margin-bottom:5px;}
+
+  /* ── Links ── */
+  a{color:var(--rust);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* Map placeholder & frame */
+  .map-ph{
+    height:190px;
+    background:linear-gradient(135deg,var(--sand) 0%,var(--sand-deep) 100%);
+    border-radius:10px;margin-top:12px;
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:8px;cursor:pointer;
+    border:2px solid var(--sand-deep);transition:border-color .2s;
+  }
+  .map-ph:hover{border-color:var(--rust);}
+  .map-ph-icon{font-size:2rem;}
+  .map-ph-label{font-size:.82rem;color:var(--canyon);font-weight:700;}
+  .map-ph-sub{font-size:.73rem;color:#8a7355;max-width:220px;text-align:center;line-height:1.4;}
+  .map-frame{width:100%;height:260px;border:0;border-radius:10px;margin-top:12px;display:block;}
 </style>
 </head>
 <body>
@@ -176,8 +195,9 @@
           <details>
             <summary><span class="t">~12p</span>Pick up the Thrifty car</summary>
             <div class="act-body">
-              <p>Take the rental car shuttle from Level 0 → Ground Transportation to the McCarran Rent-A-Car Center.</p>
+              <p>Take the rental car shuttle from Level 0 → Ground Transportation to the <a href="https://www.thrifty.com/" target="_blank" rel="noopener">Thrifty</a> Rent-A-Car Center.</p>
               <div class="act-tips"><b>⚠ Confirm on pickup:</b> the voucher shows drop-off Wed Jun 17 — verify at the counter that it's been extended to Thu Jun 18. Confirmation: <b>631118374</b>.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Thrifty+Car+Rental+Las+Vegas+Airport"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Thrifty Rent-A-Car · Las Vegas Airport</div></div>
             </div>
           </details>
         </li>
@@ -185,14 +205,15 @@
           <details>
             <summary><span class="t">2:00p</span>Nathan Burton Comedy Magic Show (to 3:10p)</summary>
             <div class="act-body">
-              <p>Award-winning 70-minute Vegas magic and comedy show at FlyOver Las Vegas on the Strip. Large-scale illusions, fast humor, and audience participation make this one of Las Vegas's most kid-pleasing afternoon shows — bright, loud, and paced perfectly for young children.</p>
+              <p>Award-winning 70-minute Vegas magic and comedy show at <a href="https://www.flyover.com/experiences/las-vegas" target="_blank" rel="noopener">FlyOver Las Vegas</a> on the Strip — <a href="https://www.nathanburton.com/" target="_blank" rel="noopener">nathanburton.com</a>. Large-scale illusions, fast humor, and audience participation make this one of Las Vegas's most kid-pleasing afternoon shows.</p>
               <ul>
                 <li>Large-scale stage illusions and dramatic disappearing acts</li>
                 <li>Audience participation moments — one of your kids may get called up</li>
                 <li>Comedy routines between magic segments keep the pace snappy</li>
                 <li>Arrive 15 min early for the best VIP seats</li>
               </ul>
-              <div class="act-tips"><b>Logistics:</b> 3771 Las Vegas Blvd S (FlyOver Las Vegas). Theater is fully air-conditioned. Order # <b>FTHXXL</b> · Booking # <b>353315109</b> · Entry via QR / mobile wallet.</div>
+              <div class="act-tips"><b>Logistics:</b> 3771 Las Vegas Blvd S. Theater is fully air-conditioned. Order # <b>FTHXXL</b> · Booking # <b>353315109</b> · Entry via QR / mobile wallet.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Harry+Reid+International+Airport+Las+Vegas&destination=FlyOver+Las+Vegas+3771+Las+Vegas+Blvd+S&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Airport → FlyOver Las Vegas</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Nathan Burton Magic Show</div>
             </div>
           </details>
@@ -203,12 +224,13 @@
             <div class="act-body">
               <p>A sweeping high-desert drive north through Nevada before crossing into the Eastern Sierra. US-95 N cuts through the Mojave and up through Beatty and Amargosa Valley before connecting to US-6 W toward Bishop and Big Pine.</p>
               <ul>
-                <li><b>Gas + snack stop: Beatty, NV</b> (~100 miles from LAS, ~1.5 hr) — good services, last busy stop for a while</li>
+                <li><b>Gas + snack stop: <a href="https://www.google.com/maps/search/?api=1&query=Beatty+NV" target="_blank" rel="noopener">Beatty, NV</a></b> (~100 miles from LAS, ~1.5 hr) — good services, last busy stop for a while</li>
                 <li>US-6 W toward Bishop passes through stunning open basin-and-range landscape</li>
                 <li>Dramatic transition: Nevada high desert → Eastern Sierra peaks</li>
-                <li>Arrive Big Pine ~8:30–9pm — plan dinner in Bishop (15 min north, Mountain Rambler Brewery open till 10p)</li>
+                <li>Arrive Big Pine ~8:30–9pm — plan dinner in Bishop (15 min north, <a href="https://www.google.com/maps/search/?api=1&query=Mountain+Rambler+Brewery+Bishop+CA" target="_blank" rel="noopener">Mountain Rambler Brewery</a> open till 10p)</li>
               </ul>
-              <div class="act-tips"><b>Tip:</b> Fill the tank in Beatty. The stretch into Bishop has limited services. Bishop has a Vons and Grocery Outlet — worth a stop tonight or first thing tomorrow morning to stock the kitchen at the lodge.</div>
+              <div class="act-tips"><b>Tip:</b> Fill the tank in Beatty. The stretch into Bishop has limited services. Bishop has a <a href="https://www.google.com/maps/search/?api=1&query=Vons+1190+N+Main+St+Bishop+CA" target="_blank" rel="noopener">Vons</a> and <a href="https://www.google.com/maps/search/?api=1&query=Grocery+Outlet+1320+N+Main+St+Bishop+CA" target="_blank" rel="noopener">Grocery Outlet</a> — worth a stop tonight or first thing tomorrow morning to stock the kitchen at the lodge.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Las+Vegas+NV&destination=Big+Pine+CA&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Las Vegas → Big Pine (~5 hr 15 min)</div></div>
             </div>
           </details>
         </li>
@@ -218,6 +240,7 @@
             <div class="act-body">
               <p>Your home for nights 1–2. Full kitchen in the room — stock it in Bishop for easy breakfasts. Quiet mountain-view setting in a small Eastern Sierra town.</p>
               <div class="act-tips"><b>Logistics:</b> 110 N Main St, Big Pine, CA · Confirmation <b>5567.400.664</b> · PIN <b>3471</b> · +1 760 937 1340. Checkout revised to Sun Jun 14 — confirm lodge has this on file.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Palisades+Lodge+Big+Pine+CA"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Palisades Lodge · 110 N Main St, Big Pine</div></div>
             </div>
           </details>
         </li>
@@ -269,12 +292,13 @@
             <div class="act-body">
               <p>Just 20 miles west of Bishop, Highway 168 climbs into a spectacular canyon ending at three crystal-clear alpine lakes between 9,000 and 10,200 feet. The paved road means no serious hiking required — you can drive to the water's edge and picnic with the Sierra Nevada towering on all sides.</p>
               <ul>
-                <li><b>South Lake</b> — highest and most dramatic; rocky shoreline, stunning Sierra views</li>
-                <li><b>Lake Sabrina</b> — accessible fishing pier, café with homemade pie and ice cream</li>
-                <li><b>North Lake</b> — quieter, beautiful aspen groves surrounding the shore</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=South+Lake+Bishop+Creek+CA" target="_blank" rel="noopener">South Lake</a></b> — highest and most dramatic; rocky shoreline, stunning Sierra views</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=Lake+Sabrina+Bishop+CA" target="_blank" rel="noopener">Lake Sabrina</a></b> — accessible fishing pier, café with homemade pie and ice cream</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=North+Lake+Bishop+Creek+CA" target="_blank" rel="noopener">North Lake</a></b> — quieter, beautiful aspen groves surrounding the shore</li>
                 <li>Allow 3–4 hours: scenic drive up + picnic + explore the shoreline</li>
               </ul>
-              <div class="act-tips"><b>Tips:</b> Bring layers — elevation is 15–20°F cooler than the valley. Kids may feel the altitude (9,000 ft) — slow down, drink extra water. Pack a picnic from Schat's Bakkery or Pupfish Cafe in Bishop. Road is paved but winding — take it easy.</div>
+              <div class="act-tips"><b>Tips:</b> Bring layers — elevation is 15–20°F cooler than the valley. Kids may feel the altitude (9,000 ft) — slow down, drink extra water. Pack a picnic from <a href="https://www.google.com/maps/search/?api=1&query=Erick+Schats+Bakkery+Bishop+CA" target="_blank" rel="noopener">Schat's Bakkery</a> or <a href="https://www.google.com/maps/search/?api=1&query=Pupfish+Cafe+Bishop+CA" target="_blank" rel="noopener">Pupfish Cafe</a> in Bishop. Road is paved but winding — take it easy.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Big+Pine+CA&destination=South+Lake+Bishop+Creek+California&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Big Pine → Bishop Creek Canyon</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Bishop Creek Canyon</div>
             </div>
           </details>
@@ -283,14 +307,15 @@
           <details>
             <summary>Ancient Bristlecone Pine Forest (optional day trip)</summary>
             <div class="act-body">
-              <p>90 minutes from Big Pine in the White Mountains, this forest holds the world's oldest living trees — some over 4,800 years old, older than the Egyptian pyramids. The short Discovery Trail and visitor center make it accessible for young kids, and there's something genuinely mind-bending about standing next to a tree that was already ancient when Rome was founded.</p>
+              <p>90 minutes from Big Pine in the <a href="https://www.google.com/maps/search/?api=1&query=Ancient+Bristlecone+Pine+Forest+White+Mountains+California" target="_blank" rel="noopener">White Mountains</a>, this forest holds the world's oldest living trees — some over 4,800 years old, older than the Egyptian pyramids. The short Discovery Trail and visitor center make it accessible for young kids, and there's something genuinely mind-bending about standing next to a tree that was already ancient when Rome was founded.</p>
               <ul>
                 <li><b>Discovery Trail</b> — short, easy loop perfect for kids; gnarled, twisted ancient trees unlike anything else</li>
-                <li>Schulman Grove Visitor Center — exhibits explaining the trees' astonishing age</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Schulman+Grove+Visitor+Center+White+Mountains+CA" target="_blank" rel="noopener">Schulman Grove Visitor Center</a> — exhibits explaining the trees' astonishing age</li>
                 <li>Ranger talks at 11am &amp; 2pm in summer — great for curious kids</li>
                 <li>Sweeping views of the Owens Valley 5,000 feet below</li>
               </ul>
               <div class="act-tips"><b>Tips:</b> 10,000 ft elevation — bring jackets (40–60°F up there), drink extra water, and take it slow. Allow 4–5 hours total including driving. <b>Skip the Methuselah Trail</b> (4.2 mi on exposed ridge — too long for young kids). Visitor center hours ~10am–4:30pm.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Big+Pine+CA&destination=Ancient+Bristlecone+Pine+Forest+California&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Big Pine → Bristlecone Pine Forest (~1.5 hr)</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Ancient Bristlecone Pine Forest</div>
             </div>
           </details>
@@ -301,11 +326,12 @@
             <div class="act-body">
               <p>The stretch from Bishop to Cedar City crosses a long, sparse stretch of Nevada desert (Goldfield → Tonopah → Cathedral Gorge) with very limited food options. A well-loaded cooler is essential.</p>
               <ul>
-                <li>Erick Schat's Bakkery — sheepherder bread + sandwiches make perfect road food</li>
-                <li>Pupfish Cafe — pack-out salads and fresh items for day-of eating</li>
-                <li>Vons (1190 N Main) or Grocery Outlet (1320 N Main) for drinks, snacks, fruit</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Erick+Schats+Bakkery+Bishop+CA" target="_blank" rel="noopener">Erick Schat's Bakkery</a> — sheepherder bread + sandwiches make perfect road food</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Pupfish+Cafe+Bishop+CA" target="_blank" rel="noopener">Pupfish Cafe</a> — pack-out salads and fresh items for day-of eating</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Vons+1190+N+Main+St+Bishop+CA" target="_blank" rel="noopener">Vons (1190 N Main)</a> or <a href="https://www.google.com/maps/search/?api=1&query=Grocery+Outlet+1320+N+Main+St+Bishop+CA" target="_blank" rel="noopener">Grocery Outlet (1320 N Main)</a> for drinks, snacks, fruit</li>
               </ul>
               <div class="act-tips"><b>Plan:</b> You'll eat from this cooler at Cathedral Gorge on Monday (no food at that park). Pack enough for 2 full days of snacks plus one picnic lunch.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Bishop+California"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Bishop, CA — grocery &amp; bakery options</div></div>
             </div>
           </details>
         </li>
@@ -353,6 +379,7 @@
                 <li>Tonopah (~halfway) has gas if needed</li>
                 <li>Eat dinner in Bishop before leaving — nothing's open late in Goldfield</li>
               </ul>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Bishop+CA&destination=Goldfield+NV&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Bishop → Goldfield (~2 hr 9 min)</div></div>
             </div>
           </details>
         </li>
@@ -362,6 +389,7 @@
             <div class="act-body">
               <p>Self-check-in with the door code means late arrival is no problem at all. The Airbnb has a full kitchen. Your host is Michael.</p>
               <div class="act-tips"><b>Finding it:</b> Don't use Apple Maps — GPS <b>37.703255, -117.231164</b>. Northbound Hwy 95, right on Crystal Ave entering town, 2 blocks, house on the right. Door code: <b>2 6 8 2</b> · WiFi: Radar Guest / summerplace</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=37.703255,-117.231164&zoom=15"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Goldfield Airbnb — exact GPS pin</div></div>
             </div>
           </details>
         </li>
@@ -400,7 +428,7 @@
           <details>
             <summary><span class="t">Morning</span>🧒 International Car Forest of the Last Church</summary>
             <div class="act-body">
-              <p>One of America's most gloriously weird roadside attractions: 40+ junked cars balanced nose-first in the Nevada desert, every surface painted in wild, constantly-changing graffiti art. It's free, bizarre, and right next to your Airbnb — the kids will find this genuinely hilarious.</p>
+              <p>One of America's most gloriously weird roadside attractions: 40+ junked cars balanced nose-first in the Nevada desert, every surface painted in wild, constantly-changing graffiti art. It's free, bizarre, and right next to your Airbnb — the kids will find this genuinely hilarious. (<a href="https://www.atlasobscura.com/places/international-car-forest-of-the-last-church" target="_blank" rel="noopener">Atlas Obscura</a>)</p>
               <ul>
                 <li>Cars stacked and angled in gravity-defying positions, some 20+ feet in the air</li>
                 <li>Every vehicle covered in colorful murals, skulls, characters, and abstract art</li>
@@ -409,6 +437,7 @@
                 <li>Free, open 24/7 — 20–30 min is all you need</li>
               </ul>
               <div class="act-tips"><b>Tips:</b> Right on Crystal Ave next to your Airbnb — you can almost walk there. Use the Airbnb bathroom first (no facilities on site). Go early before the desert heat builds. The art changes constantly so no two visits look the same.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=International+Car+Forest+of+the+Last+Church+Goldfield+NV"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">International Car Forest · Goldfield</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>International Car Forest</div>
             </div>
           </details>
@@ -417,8 +446,9 @@
           <details>
             <summary><span class="t">~11a</span>Check out Goldfield; drive north to Tonopah</summary>
             <div class="act-body">
-              <p>Tonopah is 27 miles north on US-95 (~30 min). Catch breakfast at Dinky Diner before checkout — it opens at 8:15am and it's genuinely great.</p>
+              <p>Tonopah is 27 miles north on US-95 (~30 min). Catch breakfast at <a href="https://www.google.com/maps/search/?api=1&query=Dinky+Diner+Goldfield+NV" target="_blank" rel="noopener">Dinky Diner</a> before checkout — it opens at 8:15am and it's genuinely great.</p>
               <div class="act-tips"><b>Dinky Diner:</b> 4.5★, fresh home-cooked breakfast in an 1800s building, right in town. Opens 8:15a, closed Sundays — today is Monday ✓. Don't miss it.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Goldfield+NV&destination=Tonopah+NV&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Goldfield → Tonopah (~30 min)</div></div>
             </div>
           </details>
         </li>
@@ -434,7 +464,8 @@
                 <li>Great elevated views over Tonopah from the hilltop park grounds</li>
                 <li>Self-guided: go at your own pace, leave when you're ready</li>
               </ul>
-              <div class="act-tips"><b>Tips:</b> <b>Kids 7 &amp; under FREE</b> · Adults $5 · Open 9am–5pm (behind the Mizpah Hotel). Allow 1.5–2 hours. Bring water and sunscreen — very exposed. Guided Polaris off-road tours also available: call 775-482-9274 ext 6 (8am–4pm) to reserve.</div>
+              <div class="act-tips"><b>Tips:</b> <b>Kids 7 &amp; under FREE</b> · Adults $5 · Open 9am–5pm (behind the <a href="https://www.google.com/maps/search/?api=1&query=Mizpah+Hotel+Tonopah+NV" target="_blank" rel="noopener">Mizpah Hotel</a>). Allow 1.5–2 hours. Bring water and sunscreen — very exposed. Guided Polaris off-road tours also available: call 775-482-9274 ext 6 (8am–4pm) to reserve.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Tonopah+Historic+Mining+Park+Nevada"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Tonopah Historic Mining Park</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Tonopah Historic Mining Park</div>
             </div>
           </details>
@@ -445,6 +476,7 @@
             <div class="act-body">
               <p>From Tonopah, head east on US-6 toward Ely, then south on US-93 to Panaca, NV. This stretch of Nevada highway is quiet and dramatic — wide-open basin-and-range landscape with almost no traffic.</p>
               <div class="act-tips"><b>Tip:</b> This is a good time to eat from your Bishop cooler in the car. No food at Cathedral Gorge — the shaded ramadas at the park are your lunch spot.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Tonopah+NV&destination=Cathedral+Gorge+State+Park+Nevada&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Tonopah → Cathedral Gorge (~2 hr)</div></div>
             </div>
           </details>
         </li>
@@ -452,7 +484,7 @@
           <details>
             <summary><span class="t">Late aft.</span>Cathedral Gorge State Park</summary>
             <div class="act-body">
-              <p>Ancient lakebed sediment eroded over millions of years into a surreal landscape of cathedral-like clay spires, slot canyon mazes, and cave-like formations. One of Nevada's most underrated parks — and the narrow crawl-through tunnels make it genuinely thrilling for young kids.</p>
+              <p>Ancient lakebed sediment eroded over millions of years into a surreal landscape of cathedral-like clay spires, slot canyon mazes, and cave-like formations. One of Nevada's most underrated parks — and the narrow crawl-through tunnels make it genuinely thrilling for young kids. (<a href="https://parks.nv.gov/parks/cathedral-gorge" target="_blank" rel="noopener">NV State Parks</a>)</p>
               <ul>
                 <li>Slot canyon maze — wander between towering pink and tan clay formations up to 30 feet tall</li>
                 <li><b>Crawl-through "rabbit hole" tunnels</b> — a highlight kids remember for years; narrow passages that pop you out into open spaces</li>
@@ -461,6 +493,7 @@
                 <li>Wildlife: lizards sunning on rocks, ravens, occasional raptors overhead</li>
               </ul>
               <div class="act-tips"><b>Tips:</b> $10/vehicle. Flat, easy walking — very accessible for young kids. Allow 1–1.5 hours. Restrooms at the entrance. Late afternoon visit avoids peak heat. Keep kids away from unstable clay walls. Watch for loose soil in the slot sections.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Cathedral+Gorge+State+Park+Nevada"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Cathedral Gorge State Park</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Cathedral Gorge State Park</div>
             </div>
           </details>
@@ -471,6 +504,7 @@
             <div class="act-body">
               <p>South on US-93, then west on I-15 toward St. George and Cedar City. The farm sits right on the Cathedral Gorge → Zion line — a perfectly placed overnight.</p>
               <div class="act-tips"><b>Finding the farm:</b> Address won't resolve — use Google pin: <b>37.5559346, -113.1816901</b>. From St. George (NB I-15): Exit 42, right off exit, left on Old Hwy 91, 6 mi through Kanarraville to Bumblebee Spring Rd, left ½ mi, right through the gate. Only home on the north side — Unit #2. Host cell: 435-862-6342.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Cathedral+Gorge+State+Park+Nevada&destination=37.5559346,-113.1816901&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Cathedral Gorge → Mini Animal Farm (~1.5 hr)</div></div>
             </div>
           </details>
         </li>
@@ -510,8 +544,9 @@
           <details>
             <summary><span class="t">Early</span>Drive Cedar City farm → Zion (Springdale) <i>(~50 min)</i></summary>
             <div class="act-body">
-              <p>Take I-15 S to UT-17 S, then UT-9 W through the dramatic Zion–Mt. Carmel Tunnel into the canyon. No checkout today — you're back at the farm tonight.</p>
+              <p>Take I-15 S to UT-17 S, then UT-9 W through the dramatic Zion–Mt. Carmel Tunnel into the canyon. No checkout today — you're back at the farm tonight. (<a href="https://www.nps.gov/zion/" target="_blank" rel="noopener">Zion NPS site</a>)</p>
               <div class="act-tips"><b>Tip:</b> Leave by 7–7:30am. Park entry is <b>$35/vehicle</b> (7-day pass). Head to the Visitor Center first to get a map and check the shuttle schedule. Crowds build rapidly after 9am — the earlier the better.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=37.5559346,-113.1816901&destination=Zion+National+Park+Springdale+Utah&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Mini Animal Farm → Zion (~50 min)</div></div>
             </div>
           </details>
         </li>
@@ -527,7 +562,8 @@
                 <li>You can turn back at any point — no need to commit to the full wading hike</li>
                 <li>Canyon walls provide shade through most of the walk</li>
               </ul>
-              <div class="act-tips"><b>Tips:</b> This stop gets packed by 10am — go first thing. Bring water shoes or old sneakers for the river wading. The paved walk is stroller-accessible. The full Narrows wading hike beyond the paved section involves icy water up to your waist and slippery rocks — the paved section gives you the views without the challenge. That's the right call with young kids.</div>
+              <div class="act-tips"><b>Tips:</b> This stop gets packed by 10am — go first thing. Bring water shoes or old sneakers for the river wading. The paved walk is stroller-accessible. The full Narrows wading hike beyond the paved section involves icy water up to your waist and slippery rocks — the paved section gives you the views without the challenge. That's the right call with young kids. (<a href="https://www.nps.gov/zion/planyourvisit/thenarrows.htm" target="_blank" rel="noopener">NPS trail info</a>)</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Temple+of+Sinawava+Zion+National+Park&zoom=14"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Temple of Sinawava (Narrows trailhead)</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Riverside Walk / Zion Narrows</div>
             </div>
           </details>
@@ -538,10 +574,11 @@
             <div class="act-body">
               <p>Two great afternoon options depending on how much energy is left. Lower Emerald Pool delivers a waterfall payoff in just 0.6 miles. Pa'rus Trail is flat, paved, and river-level — perfect if the kids are tired but you want to stay in the park a bit longer.</p>
               <ul>
-                <li><b>Lower Emerald Pool</b> (0.6 mi RT, Shuttle Stop 5 / Zion Lodge): a quick, shaded walk to a waterfall dripping into a shimmering pool — satisfying and short</li>
-                <li><b>Pa'rus Trail</b> (up to 3.5 mi RT from Visitor Center): completely flat, paved, stroller-accessible river walk; multiple spots to dip feet in the Virgin River; dogs and bikes welcome</li>
+                <li><b><a href="https://www.nps.gov/zion/planyourvisit/emerald-pools-trail.htm" target="_blank" rel="noopener">Lower Emerald Pool</a></b> (0.6 mi RT, Shuttle Stop 5 / Zion Lodge): a quick, shaded walk to a waterfall dripping into a shimmering pool — satisfying and short</li>
+                <li><b><a href="https://www.nps.gov/zion/planyourvisit/pa-rus-trail.htm" target="_blank" rel="noopener">Pa'rus Trail</a></b> (up to 3.5 mi RT from Visitor Center): completely flat, paved, stroller-accessible river walk; multiple spots to dip feet in the Virgin River; dogs and bikes welcome</li>
               </ul>
               <div class="act-tips"><b>Tips:</b> Do Emerald Pool first while energy is up (shuttle to Stop 5). Save Pa'rus Trail for winding down in the late afternoon — it starts at the Visitor Center so you can just walk back when done. Both have much shorter shuttle lines than the Narrows stop. Carry plenty of water.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Emerald+Pools+Zion+National+Park"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Emerald Pools / Pa'rus Trail · Zion</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Emerald Pools / Pa'rus Trail</div>
             </div>
           </details>
@@ -566,6 +603,7 @@
             <summary><span class="t">Eve.</span>Drive back to Mini Animal Farm <i>(~50 min)</i></summary>
             <div class="act-body">
               <p>Reverse your morning route back to the farm. The kids get the animals again — miniature Highland cows, goats, and alpacas — before bed. You skip packing up for another day.</p>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Zion+National+Park+Utah&destination=37.5559346,-113.1816901&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Zion → Mini Animal Farm (~50 min)</div></div>
             </div>
           </details>
         </li>
@@ -605,7 +643,8 @@
             <summary><span class="t">Morn.</span>Drive toward Valley of Fire <i>(from farm ~2.5 hr)</i></summary>
             <div class="act-body">
               <p>Head south on I-15 through St. George and Las Vegas toward the Valley of Fire exit northeast of Las Vegas. The park entrance is about 35 miles from the Strip.</p>
-              <div class="act-tips"><b>Grocery stop:</b> St. George (Smith's, Walmart) has good options. Load up on water, snacks, and sunscreen before the park — nothing is available inside.</div>
+              <div class="act-tips"><b>Grocery stop:</b> St. George (<a href="https://www.google.com/maps/search/?api=1&query=Smith's+Food+St+George+UT" target="_blank" rel="noopener">Smith's</a>, Walmart) has good options. Load up on water, snacks, and sunscreen before the park — nothing is available inside.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=37.5559346,-113.1816901&destination=Valley+of+Fire+State+Park+Nevada&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Mini Animal Farm → Valley of Fire (~2.5 hr)</div></div>
             </div>
           </details>
         </li>
@@ -613,14 +652,15 @@
           <details>
             <summary><span class="t">Midday</span>Valley of Fire State Park</summary>
             <div class="act-body">
-              <p>Nevada's oldest state park, where ancient Jurassic sand dunes turned to vivid crimson sandstone over 150 million years, then eroded into otherworldly formations. June heat is extreme (110°F+) so you'll stick to the shortest stops — but even a rapid drive-through with two stops delivers some of the most striking red rock scenery anywhere in the Southwest.</p>
+              <p>Nevada's oldest state park, where ancient Jurassic sand dunes turned to vivid crimson sandstone over 150 million years. (<a href="https://parks.nv.gov/parks/valley-of-fire" target="_blank" rel="noopener">NV State Parks</a>) June heat is extreme (110°F+) so stick to the shortest stops — but even a rapid drive-through with two stops delivers some of the most striking red rock scenery in the Southwest.</p>
               <ul>
-                <li><b>Atlatl Rock</b> — climb a short staircase to a panel of 2,000-year-old Ancestral Puebloan petroglyphs carved directly into the sandstone. One of the most accessible rock art sites in Nevada. Shaded rest area and restrooms at the parking lot.</li>
-                <li><b>Elephant Rock</b> — a 0.3-mile loop to a sandstone formation that genuinely looks like an elephant. Quick, flat, and the kids love spotting the shape. Great photo stop.</li>
-                <li><b>Rainbow Vista pullout</b> — no walking required; just pull over for panoramic views of banded red, orange, white, and purple rock formations stretching to the horizon.</li>
-                <li><b>The Beehives</b> (near east entrance) — dome-shaped formations visible from the road; stop for 5 min to look.</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=Atlatl+Rock+Valley+of+Fire+Nevada" target="_blank" rel="noopener">Atlatl Rock</a></b> — climb a short staircase to a panel of 2,000-year-old Ancestral Puebloan petroglyphs. One of the most accessible rock art sites in Nevada.</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=Elephant+Rock+Valley+of+Fire+Nevada" target="_blank" rel="noopener">Elephant Rock</a></b> — a 0.3-mile loop to a sandstone formation that genuinely looks like an elephant. Quick, flat, and the kids love spotting the shape.</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=Rainbow+Vista+Valley+of+Fire+Nevada" target="_blank" rel="noopener">Rainbow Vista pullout</a></b> — no walking required; panoramic views of banded red, orange, white, and purple rock formations.</li>
+                <li><b><a href="https://www.google.com/maps/search/?api=1&query=The+Beehives+Valley+of+Fire+Nevada" target="_blank" rel="noopener">The Beehives</a></b> (near east entrance) — dome-shaped formations visible from the road; stop for 5 min.</li>
               </ul>
-              <div class="act-tips"><b>⚠ Heat warning:</b> June highs regularly exceed 110°F. All trails over 1 mile are <b>closed May–September</b>. Visit Atlatl Rock and Elephant Rock before 9:30am or after 4:30pm. Bring 2–3 liters of water per person. Reapply sunscreen every 30 min. Visitor Center (9am–4:30pm) has shade, water, and AC. Fire Wave and White Domes loop are closed in summer — skip them.</div>
+              <div class="act-tips"><b>⚠ Heat warning:</b> June highs regularly exceed 110°F. All trails over 1 mile are <b>closed May–September</b>. Visit Atlatl Rock and Elephant Rock before 9:30am or after 4:30pm. Bring 2–3 liters of water per person. Reapply sunscreen every 30 min. Visitor Center (9am–4:30pm) has shade, water, and AC.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&q=Valley+of+Fire+State+Park+Nevada"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Valley of Fire State Park</div></div>
               <div class="img-ph"><div class="img-ph-icon">📷</div>Valley of Fire State Park</div>
             </div>
           </details>
@@ -629,8 +669,9 @@
           <details>
             <summary><span class="t">Aft.</span>Drive Valley of Fire → Mesquite <i>(~1 hr 20 min, ~52 mi)</i></summary>
             <div class="act-body">
-              <p>Exit the park west and pick up I-15 N toward Mesquite. The Highland Estates Condotel has a pool — perfect for cooling off after the desert heat.</p>
-              <div class="act-tips"><b>Dinner tonight:</b> Gregory's Mesquite Grill (4.6★) — excellent salmon, great-value early dinner menu. Closed Mon/Tue — open Wed ✓. Skip the smoky casino restaurants with the kids.</div>
+              <p>Exit the park west and pick up I-15 N toward Mesquite. The <a href="https://www.google.com/maps/search/?api=1&query=Highland+Estates+Condotel+555+Highland+Dr+Mesquite+NV" target="_blank" rel="noopener">Highland Estates Condotel</a> has a pool — perfect for cooling off after the desert heat.</p>
+              <div class="act-tips"><b>Dinner tonight:</b> <a href="https://www.google.com/maps/search/?api=1&query=Gregorys+Mesquite+Grill+Mesquite+NV" target="_blank" rel="noopener">Gregory's Mesquite Grill</a> (4.6★) — excellent salmon, great-value early dinner menu. Closed Mon/Tue — open Wed ✓. Skip the smoky casino restaurants with the kids.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Valley+of+Fire+State+Park+Nevada&destination=Mesquite+NV&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Valley of Fire → Mesquite (~1 hr 20 min)</div></div>
             </div>
           </details>
         </li>
@@ -673,6 +714,7 @@
             <div class="act-body">
               <p>Pack the night before for a smooth checkout. I-15 W is a straight shot to Las Vegas — target leaving Mesquite by 8:30am.</p>
               <div class="act-tips"><b>Timeline:</b> Leave Mesquite 8:30a → arrive LAS ~9:45–10a → return car (~15 min) → shuttle to terminal → check bags → security → gate. A 12:10p departure is very comfortable with this timing.</div>
+              <div class="map-ph" data-src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDoFY2jVH5xsuIUXMDd2xqbo-5LSx0tOlo&origin=Mesquite+NV&destination=Harry+Reid+International+Airport+Las+Vegas&mode=driving"><div class="map-ph-icon">🗺️</div><div class="map-ph-label">Tap to load map</div><div class="map-ph-sub">Mesquite → Las Vegas Airport (~1 hr 25 min)</div></div>
             </div>
           </details>
         </li>
@@ -713,5 +755,20 @@
   </footer>
 
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.map-ph').forEach(function(ph) {
+    ph.addEventListener('click', function() {
+      var iframe = document.createElement('iframe');
+      iframe.src = this.dataset.src;
+      iframe.className = 'map-frame';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.title = this.querySelector('.map-ph-sub') ? this.querySelector('.map-ph-sub').textContent : 'Map';
+      this.replaceWith(iframe);
+    });
+  });
+});
+</script>
 </body>
 </html>

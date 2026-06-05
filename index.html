@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubin Family — Southwest Trip · June 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600;700&display=swap');
+  :root{
+    --paper:#f6efe2; --ink:#2a1c12; --rust:#b5491f; --rust-deep:#8a2f12;
+    --canyon:#6e3d24; --sage:#5e6b4a; --gold:#d99a2b; --sand:#e8ddc7;
+    --sand-deep:#d6c4a0; --shadow:rgba(80,40,15,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Archivo',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 70px;}
+
+  header{padding:46px 20px 30px;text-align:center;}
+  header .dates{font-family:'Archivo';font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--rust);margin-bottom:12px;}
+  header h1{font-family:'Fraunces';font-weight:900;font-size:clamp(2rem,6vw,3.2rem);line-height:1;letter-spacing:-.02em;color:var(--canyon);}
+  header .who{margin-top:14px;font-size:.95rem;color:var(--sage);font-weight:500;}
+
+  .route{display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center;align-items:center;
+    margin:22px auto 8px;font-family:'Fraunces';font-size:.85rem;color:var(--canyon);}
+  .route .a{color:var(--rust);font-weight:700;margin:0 2px;}
+
+  .summary{background:#fff;border:1px solid var(--sand-deep);border-radius:14px;
+    padding:20px 22px;margin:24px 0 36px;box-shadow:0 6px 20px var(--shadow);}
+  .summary h2{font-family:'Fraunces';font-weight:600;font-size:1.1rem;color:var(--rust-deep);margin-bottom:14px;}
+  .frow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 20px;}
+  .fitem{font-size:.88rem;}
+  .fitem .k{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#8a7355;font-weight:600;display:block;}
+  .fitem .v{font-weight:600;}
+  .conf{color:var(--rust-deep);font-weight:700;letter-spacing:.04em;}
+
+  .day{background:#fff;border-radius:16px;overflow:hidden;margin-bottom:24px;
+    box-shadow:0 6px 20px var(--shadow);border:1px solid rgba(214,196,160,.6);}
+  .photo{position:relative;height:170px;background:var(--sand-deep);overflow:hidden;}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo .cap{position:absolute;left:0;bottom:0;right:0;padding:18px 20px 12px;
+    background:linear-gradient(transparent,rgba(20,10,4,.78));color:#fff;}
+  .photo .dnum{font-family:'Fraunces';font-weight:900;font-size:1.5rem;line-height:1;}
+  .photo .ddate{font-weight:600;font-size:.92rem;opacity:.95;}
+  .photo .dtag{display:inline-block;margin-top:5px;font-size:.66rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;background:var(--rust);color:#fff;padding:3px 9px;border-radius:14px;}
+  .photo .dtag.fam{background:var(--sage);} .photo .dtag.gap{background:var(--rust-deep);}
+
+  .body{padding:18px 22px 22px;}
+  .blurb{font-size:.97rem;color:#3a281a;margin-bottom:6px;}
+  ul.acts{list-style:none;margin:12px 0 0;}
+  ul.acts li{position:relative;padding:6px 0 6px 22px;font-size:.93rem;border-bottom:1px dashed var(--sand);}
+  ul.acts li:last-child{border-bottom:none;}
+  ul.acts li::before{content:"";position:absolute;left:3px;top:14px;width:7px;height:7px;background:var(--gold);border-radius:50%;}
+  ul.acts li .t{font-weight:700;color:var(--canyon);margin-right:7px;}
+
+  .booking{margin-top:16px;background:var(--sand);border-radius:10px;padding:14px 16px;border-left:4px solid var(--rust);}
+  .booking .bh{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-deep);margin-bottom:8px;}
+  .booking .bname{font-family:'Fraunces';font-weight:600;font-size:1.05rem;margin-bottom:4px;}
+  .booking .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px 16px;margin-top:8px;}
+  .booking .f{font-size:.86rem;}
+  .booking .f .k{font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#8a7355;font-weight:600;display:block;}
+
+  .note{background:#fff7e6;border:1px dashed var(--gold);border-radius:9px;padding:11px 14px;margin-top:14px;font-size:.86rem;color:#6b4a14;}
+  .note b{color:var(--rust-deep);}
+  .flag{background:#fdece6;border:1px dashed var(--rust);border-radius:9px;padding:11px 14px;margin-top:14px;font-size:.86rem;color:var(--rust-deep);}
+  .food{margin-top:16px;background:#eef2e6;border-radius:10px;padding:14px 16px;border-left:4px solid var(--sage);}
+  .food .fh{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#46532f;margin-bottom:8px;}
+  .food ul{list-style:none;margin:0;}
+  .food li{position:relative;padding:5px 0 5px 20px;font-size:.88rem;border-bottom:1px dotted #cdd6bc;}
+  .food li:last-child{border-bottom:none;}
+  .food li::before{content:"🍴";position:absolute;left:0;top:5px;font-size:.7rem;}
+  .food li b{color:#46532f;}
+  .food .bk{margin-top:9px;font-size:.82rem;color:#5a4a2a;background:#fdf3dc;border-radius:7px;padding:7px 10px;}
+
+  footer{text-align:center;margin-top:36px;padding-top:24px;border-top:2px solid var(--sand-deep);font-size:.82rem;color:#8a7355;}
+  footer .big{font-family:'Fraunces';font-weight:600;font-size:1.05rem;color:var(--canyon);margin-bottom:5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="dates">June 12 – 18, 2026 · 6 nights</div>
+    <h1>Our Southwest Trip</h1>
+    <div class="who">Greg, Keren, Shai &amp; Ori · one rental car</div>
+    <div class="route">
+      Las Vegas <span class="a">→</span> Big Pine <span class="a">→</span> Goldfield <span class="a">→</span> Cathedral Gorge <span class="a">→</span> Cedar City <span class="a">→</span> Zion <span class="a">→</span> Mesquite <span class="a">→</span> Las Vegas
+    </div>
+  </header>
+
+  <div class="summary">
+    <h2>✈ Flights — all four of us (Southwest)</h2>
+    <div class="frow">
+      <div class="fitem"><span class="k">Out · Greg</span><span class="v conf">ARAYVP</span></div>
+      <div class="fitem"><span class="k">Out · Keren</span><span class="v conf">ARBMY8</span></div>
+      <div class="fitem"><span class="k">Out · Shai</span><span class="v conf">ARCVUG</span></div>
+      <div class="fitem"><span class="k">Out · Ori</span><span class="v conf">ARAYVP</span></div>
+      <div class="fitem"><span class="k">Return · Greg+Ori</span><span class="v conf">ARQ38O</span></div>
+      <div class="fitem"><span class="k">Return · Shai</span><span class="v conf">AWZNU8</span></div>
+    </div>
+    <div class="frow" style="margin-top:14px;border-top:1px solid var(--sand-deep);padding-top:14px;">
+      <div class="fitem"><span class="k">Outbound Jun 12</span><span class="v">WN974 · BWI 9:35a → LAS 11:35a</span></div>
+      <div class="fitem"><span class="k">Return Jun 18</span><span class="v">WN235 · LAS 12:10p → BWI 7:50p</span></div>
+      <div class="fitem"><span class="k">Note</span><span class="v">Shai = companion; unaccompanied-minor + assistance requested</span></div>
+    </div>
+    <h2 style="margin-top:20px;">🚗 Rental car (Thrifty · Las Vegas airport)</h2>
+    <div class="frow">
+      <div class="fitem"><span class="k">Confirmation</span><span class="v conf">631118374</span></div>
+      <div class="fitem"><span class="k">Vehicle</span><span class="v">Dodge Ram 1500 or similar</span></div>
+      <div class="fitem"><span class="k">Pick-up</span><span class="v">Fri Jun 12, 11:00a · LAS</span></div>
+      <div class="fitem"><span class="k">Drop-off</span><span class="v">Thu Jun 18 (see note)</span></div>
+      <div class="fitem"><span class="k">Thrifty phone</span><span class="v">1-877-283-0898</span></div>
+      <div class="fitem"><span class="k">Pickup</span><span class="v">Level 0 → Ground Transp. → McCarran Rent-A-Car shuttle</span></div>
+    </div>
+    <div class="flag"><b>⚠ Fix this:</b> The voucher currently shows drop-off <b>Wed Jun 17, 10:00a</b> — but our hotels and flights run through <b>Thu Jun 18</b>. The car needs extending to Jun 18 or we'll be without a vehicle for Mesquite and the airport run. Call Thrifty (1-877-283-0898) to confirm.</div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Welcome_to_fabulous_las_vegas_sign.jpg/1000px-Welcome_to_fabulous_las_vegas_sign.jpg" alt="Las Vegas">
+      <div class="cap"><div class="dnum">Day 1</div><div class="ddate">Friday, June 12 · Fly in, magic show, drive to Big Pine</div><span class="dtag">Travel</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">Land late morning, grab the rental, catch an afternoon magic show on the Strip, then drive north into the Eastern Sierra for the night in Big Pine.</p>
+      <ul class="acts">
+        <li><span class="t">11:35a</span>Land at Las Vegas (LAS) — all four of us on WN974</li>
+        <li><span class="t">~12p</span>Pick up the Thrifty car (booked from 11:00a)</li>
+        <li><span class="t">2:00p</span>Nathan Burton Magic Show — inside FlyOver, 3771 Las Vegas Blvd S (to 3:10p)</li>
+        <li><span class="t">Aft.</span>Drive LAS → Big Pine via US-95 &amp; US-6 <i>(~5 hr 15 min, ~260 mi)</i></li>
+        <li><span class="t">Eve.</span>Check in at the Palisades Lodge, Big Pine</li>
+      </ul>
+      <div class="booking">
+        <div class="bh">🎩 Show · 4 VIP seats</div>
+        <div class="bname">Nathan Burton Magic Show</div>
+        <div class="grid">
+          <div class="f"><span class="k">Order #</span><span class="conf">FTHXXL</span></div>
+          <div class="f"><span class="k">Booking #</span><span class="conf">353315109</span></div>
+          <div class="f"><span class="k">Time</span><span>2:00–3:10p</span></div>
+          <div class="f"><span class="k">Entry</span><span>QR / mobile wallet</span></div>
+        </div>
+      </div>
+      <div class="booking">
+        <div class="bh">🛏 Lodging · Nights 1–2</div>
+        <div class="bname">The Palisades Lodge of Big Pine</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">5567.400.664</span></div>
+          <div class="f"><span class="k">PIN</span><span class="conf">3471</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Sun Jun 14 (revised)</span></div>
+          <div class="f"><span class="k">Address</span><span>110 N Main St, Big Pine, CA</span></div>
+          <div class="f"><span class="k">Phone</span><span>+1 760 937 1340</span></div>
+        </div>
+      </div>
+      <div class="note"><b>Confirm:</b> Booking still prints a Jun 15 checkout — verify the lodge has the revised <b>Jun 14</b> on file.</div>
+      <div class="food">
+        <div class="fh">🍴 Eat</div>
+        <ul>
+          <li>Arriving late in Big Pine — grab dinner on the road or in Bishop (15 min north). <b>Mountain Rambler Brewery</b> (Bishop) is open till 10p for burgers/salads.</li>
+        </ul>
+        <div class="bk"><b>Breakfast:</b> Palisades Lodge has no breakfast, but the room has a full kitchen — plan a grocery run in Bishop (Vons or Grocery Outlet) for in-room breakfasts.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Eastern_Sierra_Nevada_from_US_395.jpg/1000px-Eastern_Sierra_Nevada_from_US_395.jpg" alt="Eastern Sierra">
+      <div class="cap"><div class="dnum">Days 2–3</div><div class="ddate">Sat–Sun, June 13–14 · Family time near Bishop</div><span class="dtag fam">Family</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">Two open days in the Owens Valley with family — no fixed plans. The high Sierra is right there whenever you want it: Bishop Creek lakes, the Bristlecone Pines, or just an easy valley day.</p>
+      <div class="note">Both nights covered by the Palisades Lodge booking above (revised checkout Sun Jun 14).</div>
+      <div class="food">
+        <div class="fh">🍴 Eat — Bishop (the best food town of the trip)</div>
+        <ul>
+          <li><b>Pupfish Cafe</b> — healthiest pick: build-your-own plates, avocado toast, salmon, salads. Breakfast/lunch, closed Wed.</li>
+          <li><b>The Rolling Chef 395</b> — 4.9★ food truck, fresh fish/shrimp tacos, fresh cucumber juice. Weekdays only.</li>
+          <li><b>Cloudripper</b> — local-sourced pop-up at Owens Valley Distillery (Thu–Sat eve) — bibimbap, noodles. Check their IG first.</li>
+          <li><b>Mountain Rambler Brewery</b> — reliable daily sit-down: burgers, salads, Brussels sprouts.</li>
+          <li><b>Erick Schat's Bakkery</b> — famous stop; grab sheepherder bread &amp; sandwiches here for the drive days ahead.</li>
+        </ul>
+        <div class="bk"><b>🛒 Stock up before you leave Bishop:</b> the next two days cross long empty stretches (Goldfield, Tonopah, Cathedral Gorge) with few options. Load a cooler with sandwiches, fruit, water — Schat's bread + Pupfish make a great picnic kit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Goldfield%2CNV-hotel.JPG/1000px-Goldfield%2CNV-hotel.JPG" alt="Goldfield Nevada">
+      <div class="cap"><div class="dnum">Day 3</div><div class="ddate">Sunday, June 14 · Bishop → Goldfield (evening drive)</div><span class="dtag">Travel</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">Spend the day with family, then leave Bishop in the evening and cross into Nevada's high desert — arriving late at a one-of-a-kind stay: an eclectic desert home in Goldfield, a half-living ghost mining town.</p>
+      <ul class="acts">
+        <li><span class="t">Day</span>Family time near Bishop; pack up and check out of Palisades</li>
+        <li><span class="t">Eve.</span>Drive Bishop → Goldfield <i>(~2 hr 9 min)</i></li>
+        <li><span class="t">Late</span>Arrive Goldfield — self check-in with the door code, so a late arrival is no problem</li>
+      </ul>
+      <div class="booking">
+        <div class="bh">🛏 Lodging · Night 3</div>
+        <div class="bname">Eclectic Desert Home — Goldfield (Airbnb, host Michael)</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">HMKZKM8NSY</span></div>
+          <div class="f"><span class="k">Door code</span><span class="conf">2 6 8 2</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Mon Jun 15, 11:00a</span></div>
+          <div class="f"><span class="k">Wifi</span><span>Radar Guest / summerplace</span></div>
+        </div>
+      </div>
+      <div class="note"><b>Finding it:</b> Don't use Apple Maps — GPS <b>37.703255, -117.231164</b>. Northbound Hwy 95, right on Crystal Ave entering town, 2 blocks, house on the right.</div>
+      <div class="food">
+        <div class="fh">🍴 Eat — Goldfield (tiny)</div>
+        <ul>
+          <li>You arrive late — eat dinner before town or bring your Bishop cooler provisions. Nothing's open late here.</li>
+          <li><b>Dinky Diner</b> — the one real gem (4.5★): fresh home-cooked breakfast in an 1800s building. Opens 8:15a — great quick breakfast before Monday's drive. Closed Sun.</li>
+        </ul>
+        <div class="bk"><b>Breakfast:</b> The Goldfield Airbnb has a kitchen (and the door code lets you in late) — but with an early Monday start, Dinky Diner is the easy, fun option right in town.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Entrance_to_Tonopah_Historic_Mining_Park_%2853222973665%29.jpg/1000px-Entrance_to_Tonopah_Historic_Mining_Park_%2853222973665%29.jpg" alt="Tonopah Historic Mining Park">
+      <div class="cap"><div class="dnum">Day 4</div><div class="ddate">Monday, June 15 · Goldfield → Tonopah → Cathedral Gorge → Cedar City</div><span class="dtag">Travel</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">A big day east with three fun stops: a graffiti car-art field in Goldfield, a climbable ghost-mine in Tonopah, then the otherworldly clay spires of Cathedral Gorge — ending at the mini animal farm outside Cedar City.</p>
+      <ul class="acts">
+        <li><span class="t">Morning</span>🧒 <b>International Car Forest</b> — right on Crystal Ave by your Airbnb; dozens of junked cars planted nose-down and covered in wild graffiti. Free, open 24h, great place to let the kids run. ~20–30 min</li>
+        <li><span class="t">~11a</span>Check out Goldfield; Tonopah is right on the way north <i>(Goldfield → Cathedral Gorge is ~3 hr 30 min driving total, Tonopah included)</i></li>
+        <li><span class="t">Late a.m.</span>Tonopah Historic Mining Park — self-guided tour, headframes &amp; tunnels (kids 7 &amp; under free; behind the Mizpah Hotel). Open 9–5</li>
+        <li><span class="t">Aft.</span>Continue east to Cathedral Gorge <i>(included in the ~3 hr 30 min above)</i></li>
+        <li><span class="t">Late aft.</span>Cathedral Gorge State Park (Panaca) — slot-canyon clay caves &amp; spires; easy walks the kids will love. $10/vehicle</li>
+        <li><span class="t">Eve.</span>Short drive on to the Mini Animal Farm, Cedar City <i>(~1 hr 28 min — the farm sits right on the Cathedral Gorge→Zion line)</i></li>
+      </ul>
+      <div class="booking">
+        <div class="bh">🛏 Lodging · Nights 4–5</div>
+        <div class="bname">Farm House #2, Mini Animal Farm — Cedar City (Airbnb, host Brandon)</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">HM4EJ5NAR5</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Wed Jun 17, 10:00a</span></div>
+          <div class="f"><span class="k">Google pin</span><span class="conf">37.5559346, -113.1816901</span></div>
+          <div class="f"><span class="k">Host cell</span><span>435-862-6342</span></div>
+        </div>
+      </div>
+      <div class="note"><b>Finding it:</b> Address won't resolve — use the pin. From St. George (NB I-15): Exit 42, right off exit, left on Old Hwy 91, 6 mi through Kanarraville to Bumblebee Spring Rd, left ½ mi, right through the gate. Only home on the north side — Unit #2.</div>
+      <div class="food">
+        <div class="fh">🍴 Eat — along the way</div>
+        <ul>
+          <li><b>Tonopah (lunch):</b> <b>Tonopah Brewing Co.</b> (salads + BBQ, non-alcoholic options, kid-friendly, daily) or <b>Strawberry Hill Diner</b> (4.6★, fresh, closed Tue).</li>
+          <li><b>Cathedral Gorge (picnic):</b> no food at the park — eat your <b>cooler provisions</b> in the shaded picnic ramadas. This is where the Bishop sandwiches earn their keep.</li>
+          <li><b>Cedar City (dinner):</b> <b>Bunnisa's Thai</b> (4.7★, gluten-free &amp; veg options, closed Sun) or <b>Tony's Diner</b> (smoothies + açaí + fresh sandwiches).</li>
+        </ul>
+        <div class="bk"><b>🛒 Park-food note:</b> Bring water + snacks into Cathedral Gorge (summer heat, no concessions). Refill water in Cedar City for the next day's Zion trip.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Zion_National_Park%2C_Springdale.jpg/1000px-Zion_National_Park%2C_Springdale.jpg" alt="Zion National Park">
+      <div class="cap"><div class="dnum">Day 5</div><div class="ddate">Tuesday, June 16 · Zion National Park (day trip)</div><span class="dtag">Park Day</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">The crown jewel. An easy day trip from the farm into Zion — towering sandstone, the Virgin River, scenery that stops you mid-sentence. Beat the heat with an early start and water-based hikes, then back to the farm for the night.</p>
+      <ul class="acts">
+        <li><span class="t">Early</span>Drive Cedar City farm → Zion (Springdale) <i>(~50 min; verify exact on map)</i>; no checkout — you're at the farm again tonight</li>
+        <li><span class="t">Midday</span>Zion shuttle up-canyon — Riverside Walk into the Narrows (wading the river = perfect hot-day kid activity)</li>
+        <li><span class="t">Aft.</span>Emerald Pools or the easy Pa'rus Trail; canyon junction views</li>
+        <li><span class="t">Tip</span>Runs hot in June — lots of water, early start, midday in shade or the river</li>
+        <li><span class="t">Eve.</span>Drive back to the Mini Animal Farm <i>(~50 min)</i></li>
+      </ul>
+      <div class="note">🛏 Second night at the <b>Mini Animal Farm</b> (covered by the Nights 4–5 booking above). The kids get the animals morning and evening, and you skip packing up.</div>
+      <div class="food">
+        <div class="fh">🍴 Eat — Springdale / Zion</div>
+        <ul>
+          <li><b>Before the park:</b> <b>FeelLove Coffee</b> opens 6a — coffee, vegan/GF baked goods, and healthy grab-and-go. Or <b>The Park House</b> (4.8★ breakfast, fresh fruit &amp; omelets) if you want a sit-down start.</li>
+          <li><b>Dinner:</b> <b>Oscar's Cafe</b> — the Zion institution (daily 7a–9p, vegan items, big salads, sweet potato fries, patio) or <b>Whiptail Grill</b> for fresh Mexican.</li>
+        </ul>
+        <div class="bk"><b>🛒 Bring lunch into Zion:</b> there's only one café (Zion Lodge) inside the park and it's busy. Grab sandwiches + lots of water at <b>FeelLove</b> or <b>Sol Foods</b> (995 Zion Park Blvd, daily 7a–11p) before you board the shuttle — June is hot and the Narrows/Riverside walk has no food. Pack more water than you think.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Aztec_Sandstone_-_Valley_of_Fire1.jpg/1000px-Aztec_Sandstone_-_Valley_of_Fire1.jpg" alt="Valley of Fire State Park">
+      <div class="cap"><div class="dnum">Day 6</div><div class="ddate">Wednesday, June 17 · Cedar City → Valley of Fire → Mesquite</div><span class="dtag">Travel</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">Check out of the farm and drop south into the Valley of Fire — swirling crimson sandstone, petroglyphs, dinosaur-age dunes turned to stone. End the day in Mesquite.</p>
+      <ul class="acts">
+        <li><span class="t">10:00a</span>Check out of the Mini Animal Farm</li>
+        <li><span class="t">Morn.</span>Drive toward Valley of Fire <i>(Zion → Valley of Fire is ~1 hr 55 min; from the farm it's a bit longer — verify on map)</i></li>
+        <li><span class="t">Midday</span>Valley of Fire — scenic road, Atlatl Rock petroglyphs, Elephant Rock, Fire Wave overlook</li>
+        <li><span class="t">Aft.</span>Continue to Mesquite <i>(~1 hr 20 min, ~52 mi)</i>; cool off</li>
+      </ul>
+      <div class="booking">
+        <div class="bh">🛏 Lodging · Night 6</div>
+        <div class="bname">Highland Estates Condotel — Mesquite (2-BR Deluxe)</div>
+        <div class="grid">
+          <div class="f"><span class="k">Confirmation</span><span class="conf">6576.052.016</span></div>
+          <div class="f"><span class="k">PIN</span><span class="conf">2311</span></div>
+          <div class="f"><span class="k">Check-out</span><span>Thu Jun 18, by 11a</span></div>
+          <div class="f"><span class="k">Address</span><span>555 Highland Dr, Mesquite NV</span></div>
+        </div>
+      </div>
+      <div class="flag"><b>⚠ Heat:</b> Valley of Fire June highs hit 110°F+. Trails over 1 mi are <b>closed May–Sept</b>. Stick to short walks &amp; overlooks, go early, carry water.</div>
+      <div class="food">
+        <div class="fh">🍴 Eat — along the way</div>
+        <ul>
+          <li><b>Valley of Fire (picnic):</b> no food in the park — carry water + snacks for the heat. Big grocery run options in Cedar City or St. George before you arrive.</li>
+          <li><b>Overton (lunch, 10 min from the park):</b> <b>Salts</b> — healthiest pick: fresh chicken-rice soup, GF options, in a converted church (daily). Or <b>La Fonda</b> for generous fresh Mexican.</li>
+          <li><b>Mesquite (dinner):</b> <b>Gregory's Mesquite Grill</b> (4.6★, great-value early dinner set menu, excellent salmon; closed Mon/Tue — open Wed for you). Skip the smoky casino diners with the kids.</li>
+        </ul>
+        <div class="bk"><b>Breakfast:</b> Mesquite Condotel has a kitchen but no included breakfast — fine, since you're up and driving to Vegas Thursday morning.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Las_Vegas_strip.jpg/1000px-Las_Vegas_strip.jpg" alt="Las Vegas Strip">
+      <div class="cap"><div class="dnum">Day 7</div><div class="ddate">Thursday, June 18 · Mesquite → Vegas → home</div><span class="dtag">Travel</span></div>
+    </div>
+    <div class="body">
+      <p class="blurb">Easy final morning. Drive from Mesquite to Las Vegas, drop the car, and fly home — into Baltimore by evening.</p>
+      <ul class="acts">
+        <li><span class="t">Morn.</span>Check out of Highland Estates (by 11a); drive Mesquite → LAS <i>(~1 hr 25 min via I-15)</i></li>
+        <li><span class="t">~9:30a</span>Return the Thrifty car (target ~2 hrs before the flight)</li>
+        <li><span class="t">12:10p</span>Depart Las Vegas — WN235</li>
+        <li><span class="t">7:50p</span>Arrive Baltimore (BWI)</li>
+      </ul>
+      <div class="note"><b>Tight-ish morning:</b> A 12:10p flight means leaving Mesquite by ~8:30a to return the car and clear security comfortably. Easy if you pack the night before.</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="big">7 days · 6 nights · a big desert &amp; canyon loop</div>
+    <div>All drive times filled in. Open items: confirm Thrifty car extended to Jun 18 · confirm Palisades Jun 14 checkout.</div>
+  </footer>
+
+</div>
+</body>
+</html>
